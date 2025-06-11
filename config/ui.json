@@ -1,0 +1,36 @@
+{
+    "Title": "Self Service",
+    "Logo": "images/logo.png",
+
+    "ProgramName1": "Турбосушка",
+    "ProgramName2": "Пылесос",
+    "ProgramName3": "Вода | сильное давление",
+    "ProgramName4": "Вода | среднее давление",
+    "ProgramName5": "Вода | слабое давление",
+    "ProgramName6": "Активная химия",
+    "ProgramName7": "Пена",
+    "ProgramName8": "Воск\nПолировка",
+    
+    "ProgramImage1": "images/turbo.png",
+    "ProgramImage2": "images/vacuum.png",
+    "ProgramImage3": "images/water_high.png",
+    "ProgramImage4": "images/water_med.png",
+    "ProgramImage5": "images/water_low.png",
+    "ProgramImage6": "images/chemistry.png",
+    "ProgramImage7": "images/foam.png",
+    "ProgramImage8": "images/wax.png",
+
+    "ProgramAudio1": "audio/turbo.mp3",
+    "ProgramAudio2": "audio/vacuum.mp3",
+    "ProgramAudio3": "audio/water.mp3",
+    "ProgramAudio4": "audio/water.mp3",
+    "ProgramAudio5": "audio/water.mp3",
+    "ProgramAudio6": "audio/chemistry.mp3",
+    "ProgramAudio7": "audio/foam.mp3",
+    "ProgramAudio8": "audio/wax.mp3",
+    "ProgramAudioPause": "audio/pause.mp3",
+
+    "SlideChangeTimeout": 1000,
+    "InitSlideChangeMult": 3,
+    "ButtonTimeout": 5000
+}

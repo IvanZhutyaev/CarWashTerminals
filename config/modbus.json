@@ -1,0 +1,9 @@
+{
+    "BaudRate": 38400,
+    "DataBits": 8,
+    "Parity": 0,
+    "PortName": "/dev/ttyUSB0",
+    "ServerAddress": 18,
+    "StopBits": 1,
+    "Timeout": 8
+}
