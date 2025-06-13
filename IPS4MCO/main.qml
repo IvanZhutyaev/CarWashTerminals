@@ -13,7 +13,46 @@ ApplicationWindow {
     //visibility:  Qt.WindowFullScreen
     width: Constants.width
     height: Constants.height
+    color: "#000000" // Set background color to black
 
+    // Top header as seen in the new design
+    Row {
+        id: topHeader
+        width: parent.width
+        height: 60 // Adjust height as needed
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
+        spacing: 10
+        padding: 20
+
+        Text {
+            text: "VoDA | Self Service"
+            font.family: Constants.fontFamily
+            font.pixelSize: 30
+            font.weight: Font.ExtraBold
+            color: "#FFFFFF"
+            verticalAlignment: Text.AlignVCenter
+            anchors.verticalCenter: parent.verticalCenter
+        }
+
+        Rectangle {
+            width: 1 // Spacer to push time to the right
+            height: 1
+            Layout.fillWidth: true
+        }
+
+        Text {
+            id: currentTimeText
+            text: backend.time // Assuming backend.time provides the current time string (e.g., "23:00")
+            font.family: Constants.fontFamily
+            font.pixelSize: 30
+            font.weight: Font.ExtraBold
+            color: "#FFFFFF"
+            verticalAlignment: Text.AlignVCenter
+            anchors.verticalCenter: parent.verticalCenter
+        }
+    }
 
     signal qmlSetButtons(buttons: int)
     signal qmlClerButtonStateQr()
@@ -77,7 +116,9 @@ ApplicationWindow {
 
     Session {
         id: p_session
-        anchors.fill: parent
+        anchors.fill: parent // Adjusted to fill below the header
+        anchors.top: topHeader.bottom // Position below the new header
+        anchors.topMargin: 10 // Small margin from the header
         isWaiting: true
         enabled: false
         visible: false
@@ -86,11 +127,17 @@ ApplicationWindow {
     Error {
         id: p_error
         visible: false
+        anchors.fill: parent // Assuming error covers the whole screen
+        anchors.top: topHeader.bottom
+        anchors.topMargin: 10
     }
 
     Initialization {
         id: p_initialization
         visible: false
+        anchors.fill: parent // Assuming initialization covers the whole screen
+        anchors.top: topHeader.bottom
+        anchors.topMargin: 10
     }
 
 }
