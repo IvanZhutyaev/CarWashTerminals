@@ -10,6 +10,7 @@
 #include "engine/configmanager.h"
 #include "engine/logmanager.h"
 #include "pilotnt/pilotnt.h"
+#include "../accountmanager/accountmanager.h"
 
 #define FILE_PATH_MODBUS_CONFIG "config/modbus.json"
 #define FILE_PATH_UI_CONFIG "config/ui.json"
@@ -31,6 +32,8 @@ public:
     Q_PROPERTY(int colcash READ colcash WRITE setColcash NOTIFY colcashChanged)
     Q_PROPERTY(bool ispause_free READ ispause_free WRITE setIsPauseFree NOTIFY isPauseFreeChanged)
 
+    Q_PROPERTY(AccountManager* accountManager READ accountManager CONSTANT)
+
     explicit Engine(QString appdir, LogManager *logmanager, QObject *parent = nullptr);
     ~Engine();
 
@@ -47,6 +50,7 @@ public:
     int colbalance() const;
     int colcash() const;
     bool ispause_free() const;
+    AccountManager* accountManager() const { return m_accountManager; }
 
 signals:
     void showInitialization(int state, QString text = "");
@@ -165,6 +169,8 @@ private:
     int m_colbalance {0};
     int m_colcash {0};
     bool m_ispause_free {false};
+
+    AccountManager *m_accountManager;
 
     void errorEvent();
     int st_waiting();

@@ -31,5 +31,7 @@ QtObject {
     readonly property int qr: 4
     readonly property int collection: 5
     readonly property int wallet: 6
+    readonly property int registration: 7
+    readonly property int login: 8
 
 }

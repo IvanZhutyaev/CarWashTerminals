@@ -3,6 +3,7 @@ import QtGraphicalEffects 1.12
 import IPS4MCO 1.0
 import "NewStyledButton.qml"
 import "NewStyledProgramButton.qml"
+import "AccountMenu.qml"
 
 Item {
     id: container
@@ -124,7 +125,7 @@ Item {
                 width: 150
                 height: 80
                 onClicked: {
-                    // No functional changes
+                    accountMenu.visible = true
                 }
             }
             NewStyledButton {
@@ -156,6 +157,10 @@ Item {
         color: "#80000000"
         source: balance_component
         spread: 0.5
+    }
+
+    AccountMenu {
+        id: accountMenu
     }
 }
 

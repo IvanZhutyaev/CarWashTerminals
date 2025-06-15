@@ -39,6 +39,7 @@ int main(int argc, char *argv[]) {
 
     engine.rootContext()->setContextProperty("backend", &engine_backend);
     engine.rootContext()->setContextProperty("applicationDirPath", appdir);
+    engine.rootContext()->setContextProperty("accountManager", engine_backend.accountManager());
     engine.addImportPath(":/imports");
 
 

@@ -1,4 +1,4 @@
-QT += qml quick serialport serialbus multimedia multimediawidgets
+QT += qml quick serialport serialbus multimedia multimediawidgets sql
 
 CONFIG += c++14
 

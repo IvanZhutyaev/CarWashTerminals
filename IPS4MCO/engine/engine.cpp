@@ -13,6 +13,15 @@ Engine::Engine(QString appdir, LogManager *logmanager, QObject *parent) : QObjec
     bank_pilotnt = new PilotNT();
     connect(bank_pilotnt, &PilotNT::finished, this, &Engine::paymentBankHandler);
 
+    // Initialize AccountManager
+    m_accountManager = new AccountManager(this);
+    connect(m_accountManager, &AccountManager::loggedInChanged, [this]() { emit loggedInChanged(); }); // Example connection
+    connect(m_accountManager, &AccountManager::currentBalanceChanged, [this]() { emit currentBalanceChanged(); });
+    connect(m_accountManager, &AccountManager::loginMessageChanged, [this]() { emit loginMessageChanged(); });
+    connect(m_accountManager, &AccountManager::registrationMessageChanged, [this]() { emit registrationMessageChanged(); });
+    connect(m_accountManager, &AccountManager::showPersonalAccount, this, &Engine::showPersonalAccount); // Forward signal
+    connect(m_accountManager, &AccountManager::hidePersonalAccount, this, &Engine::hidePersonalAccount); // Forward signal
+
     timer = new QTimer();
     delayTimer = new QTimer();
     reconnectTimer = new QTimer();

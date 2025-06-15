@@ -60,17 +60,22 @@ ApplicationWindow {
 
     signal qmlSendPayment(value : int, back_screen : int)
 
+    // New signals for Account Management screens
+    signal showRegistrationScreen()
+    signal showLoginScreen()
 
     property bool isErrorColorCFG: false
 
     // Use definition fro, IPS4MCO.Constants
     function changePage (page) {
-        var visible_page = [false, false, false]
+        var visible_page = [false, false, false, false, false] // Expanded for 5 pages: Init, Error, Session, Registration, Login
         visible_page[page] = true
 
-        p_initialization.visible = visible_page[0]
-        p_error.visible = visible_page[1]
-        p_session.visible = visible_page[2]
+        p_initialization.visible = visible_page[Constants.initialization]
+        p_error.visible = visible_page[Constants.error]
+        p_session.visible = visible_page[Constants.session]
+        p_registration_screen.visible = visible_page[Constants.registration]
+        p_login_screen.visible = visible_page[Constants.login]
     }
 
 
@@ -111,7 +116,16 @@ ApplicationWindow {
         }
     }
 
-
+    // New connections for account screens
+    Connections {
+        target: window // Connect to signals from this window
+        function onShowRegistrationScreen() {
+            changePage(Constants.registration)
+        }
+        function onShowLoginScreen() {
+            changePage(Constants.login)
+        }
+    }
 
 
     Session {
@@ -138,6 +152,20 @@ ApplicationWindow {
         anchors.fill: parent // Assuming initialization covers the whole screen
         anchors.top: topHeader.bottom
         anchors.topMargin: 10
+    }
+
+    RegistrationScreen {
+        id: p_registration_screen
+        anchors.fill: parent
+        // No top margin needed as it will overlay the header
+        visible: false
+    }
+
+    LoginScreen {
+        id: p_login_screen
+        anchors.fill: parent
+        // No top margin needed as it will overlay the header
+        visible: false
     }
 
 }
