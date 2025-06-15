@@ -36,7 +36,8 @@ SOURCES += \
     engine/logmanager.cpp \
     interfacecfg/colorconfig.cpp \
         main.cpp \
-    pilotnt/pilotnt.cpp
+    pilotnt/pilotnt.cpp \
+    db_manager/database_manager.cpp
 
 RESOURCES += qml.qrc
 
@@ -59,7 +60,8 @@ HEADERS += \
     engine/logmanager.h \
     errors.h \
     interfacecfg/colorconfig.h \
-    pilotnt/pilotnt.h
+    pilotnt/pilotnt.h \
+    db_manager/database_manager.h
 
 DISTFILES += \
     imports/IPS4MCO/Constants.qml \
