@@ -767,4 +767,19 @@ void Engine::setIsPauseFree(bool ispause_free) {
 }
 //=========================================
 
+void Engine::updateBalance(int amount) {
+    if (amount <= 0) {
+        logManager->addMsg("Попытка пополнения баланса на отрицательную или нулевую сумму", "Payment", "Ошибка");
+        return;
+    }
+
+    // Обновляем баланс в базе данных через AccountManager
+    if (m_accountManager) {
+        m_accountManager->updateBalance(amount);
+        logManager->addMsg("Баланс успешно пополнен на " + QString::number(amount) + " ₽", "Payment", "Информация");
+    } else {
+        logManager->addMsg("Ошибка обновления баланса: AccountManager не инициализирован", "Payment", "Ошибка");
+    }
+}
+
 

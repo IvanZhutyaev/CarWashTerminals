@@ -1,66 +1,79 @@
 import QtQuick 2.4
+import QtQuick.Controls 2.5
+import IPS4MCO 1.0
+import QtQuick.Layouts 1.15
 
-CashlessPaymentForm {
+Item {
     id: root
-    property int m_balance: 0
-    property int m_step: 0
+    width: Constants.width
+    height: Constants.height
+    property int selectedAmount: 0
 
-    onVisibleChanged: {
-        if (root.visible == true) {
-            back_timer.start();
-            m_step = 50;
-            m_balance = 0;
-            cashless_btns.slideInit();
-            cashless_info.showPaymentInfo();
-        }
+    Rectangle {
+        anchors.fill: parent
+        color: color_cfg.background
 
-    }
+        ColumnLayout {
+            anchors.fill: parent
+            anchors.margins: 20
+            spacing: 20
 
+            Label {
+                Layout.fillWidth: true
+                text: "ОПЛАТА КАРТОЙ"
+                font.pixelSize: 48
+                font.family: Constants.fontFamily
+                font.weight: Font.ExtraBold
+                color: color_cfg.first
+                horizontalAlignment: Text.AlignHCenter
+            }
 
-    cashless_btns.onBtnIncClicked: {
-        if (m_balance == 0)
-            cashless_btns.btnSndEnable(true);
-        m_balance += m_step;
-    }
+            Label {
+                Layout.fillWidth: true
+                text: "Сумма: " + selectedAmount + " ₽"
+                font.pixelSize: 36
+                font.family: Constants.fontFamily
+                color: color_cfg.first
+                horizontalAlignment: Text.AlignHCenter
+            }
 
-    cashless_btns.onBtnDecClicked: {
-        if (m_balance - m_step <= 0) {
-            m_balance = 0;
-            cashless_btns.btnSndEnable(false);
-        } else
-            m_balance -= m_step;
-    }
+            YooKassaPayment {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                amount: selectedAmount
+                description: "Пополнение баланса"
 
-    cashless_btns.onBtnS10Clicked: {
-        m_step = 10;
-    }
+                onPaymentCompleted: {
+                    // Обновляем баланс пользователя
+                    backend.updateBalance(selectedAmount)
+                    window.popScreen()
+                }
 
-    cashless_btns.onBtnS50Clicked: {
-        m_step = 50;
-    }
+                onPaymentFailed: {
+                    // Показываем ошибку
+                    errorDialog.text = error
+                    errorDialog.open()
+                }
 
-    cashless_btns.onBtnSndClicked: {
-        if (m_balance > 0) {
-            app_footer.state = app_footer.empty;
-            window.qmlSendPayment(m_balance, back_screen);
-        }
-    }
-
-    Timer {
-       id: back_timer
-       interval: 30000;
-       running: false;
-       onTriggered: {
-           back_timer.stop();
-           backend.showWaiting();
-       }
-    }
-
-    Connections {
-        target: backend
-        function onSetUIConfig(config) {
-            back_timer.interval = config["BankTerminalBackTimeout"] * 1000;
+                onBackClicked: {
+                    window.popScreen()
+                }
+            }
         }
     }
 
+    Dialog {
+        id: errorDialog
+        title: "Ошибка"
+        property alias text: errorText.text
+        modal: true
+        anchors.centerIn: parent
+        standardButtons: Dialog.Ok
+
+        Label {
+            id: errorText
+            anchors.fill: parent
+            wrapMode: Text.WordWrap
+        }
+    }
 }

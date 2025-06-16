@@ -52,6 +52,8 @@ public:
     bool ispause_free() const;
     AccountManager* accountManager() const { return m_accountManager; }
 
+    Q_INVOKABLE void updateBalance(int amount);
+
 signals:
     void showInitialization(int state, QString text = "");
     void showError(int error, QString text = "");
@@ -63,7 +65,6 @@ signals:
 
     void showPaymentLoading(int state);
     void showPaymentError();
-
 
     void setQR(QString qr_string);
     void setPressedButtons(int buttons);
@@ -87,7 +88,6 @@ public slots:
 
     void cppSendPayment(int value, int back_screen);
 
-
     // Properties
     void setBalance(int balance);
     void setTime(QString time);
@@ -99,7 +99,6 @@ public slots:
     void setColbalance(int colbalance);
     void setColcash(int colcash);
     void setIsPauseFree(bool ispause_free);
-
 
 private:
     enum States {
@@ -123,7 +122,6 @@ private:
     int back_screen;
 
     QString appdir;
-
 
     PilotNT *bank_pilotnt;
     ModbusController *modbusController;
@@ -149,7 +147,6 @@ private:
     // bt - BankTerminal
     int bt_error_timeout = 5000;
     int bt_success_timeout = 5000;
-
 
     bool write_buttons = false;
     unsigned int pbuttons = 0;
@@ -195,7 +192,6 @@ private slots:
 
     void paymentBankHandler(int error);
     void showSessionLocal();
-
 };
 
 #endif // ENGINE_H

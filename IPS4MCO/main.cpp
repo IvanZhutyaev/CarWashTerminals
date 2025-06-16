@@ -5,6 +5,7 @@
 #include <QtQuick/QQuickView>
 
 #include "engine/engine.h"
+#include "yookassa.h"
 
 #include "QtQrCode"
 #include "../qt-qrcode/quickitem/QtQrCodeQuickItem.hpp"
@@ -35,11 +36,17 @@ int main(int argc, char *argv[]) {
     LogManager logManager(appdir + FILE_PATH_LOG);
     Engine engine_backend(appdir, &logManager);
 
+    // Создаем экземпляр YooKassa
+    YooKassa yooKassa;
+    yooKassa.setShopId("1031378");
+    yooKassa.setSecretKey("test_x-b5O6tQsP2nz0zDoZ5YKCWo9XbPzUIvRH9vkAeCvoc");
+
     QQmlApplicationEngine engine;
 
     engine.rootContext()->setContextProperty("backend", &engine_backend);
     engine.rootContext()->setContextProperty("applicationDirPath", appdir);
     engine.rootContext()->setContextProperty("accountManager", engine_backend.accountManager());
+    engine.rootContext()->setContextProperty("yooKassa", &yooKassa);
     engine.addImportPath(":/imports");
 
 
