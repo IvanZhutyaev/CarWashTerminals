@@ -1,5 +1,5 @@
 #include "colorconfig.h"
-
+#include <QRegularExpression>
 colorconfig::colorconfig(const QString& appdir, QObject *parent)
     : QObject(parent),
       appdir(appdir)
@@ -411,7 +411,7 @@ bool colorconfig::checkParam(const std::string& option,
     }
 
     setter(QString::fromStdString(cfg.rootObject()->value(option)->toString()).toLower());
-    if (!getter().contains(QRegExp("^#[0-9,A-F,a-f]{6}$"))) {
+    if (!getter().contains(QRegularExpression("^#[0-9A-Fa-f]{6}$"))) {
         logmanager.addMsg("Некорректный формат параметра: \"" + QString::fromStdString(option) + "\".", logmanager.SYBSYS_COLORSCHEME);
         return true;
     }

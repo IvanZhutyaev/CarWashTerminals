@@ -8,7 +8,7 @@
 #include <QDebug>
 #include <QCryptographicHash>
 #include <QHostInfo>
-#include <QNetworkConfigurationManager>
+#include <QtNetwork/QNetworkConfigurationManager>
 
 class AccountManager : public QObject
 {

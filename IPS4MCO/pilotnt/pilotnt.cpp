@@ -1,5 +1,5 @@
 #include "pilotnt.h"
-
+#include <QVariant>
 PilotNT::PilotNT(QObject *parent) : QObject(parent)
 {
     PilotNTProcess = new QProcess(this);

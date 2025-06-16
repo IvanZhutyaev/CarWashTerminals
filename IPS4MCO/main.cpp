@@ -1,7 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
-#include <QQuickStyle>
+#include <QtQuickControls2/QQuickStyle>
 #include <QtQuick/QQuickView>
 
 #include "engine/engine.h"

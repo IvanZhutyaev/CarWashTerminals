@@ -1,6 +1,5 @@
-QT += qml quick serialport serialbus multimedia multimediawidgets sql
-
-CONFIG += c++14
+QT += qml quick serialport serialbus multimedia multimediawidgets sql quickcontrols2 network
+CONFIG += c++17
 
 #for debug TODO: Remove!
 CONFIG+=qml_debug

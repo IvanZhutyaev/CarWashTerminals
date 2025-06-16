@@ -26,7 +26,7 @@ int ModbusController::create() {
          delete modbusDevice;
          modbusDevice = nullptr;
     }
-    modbusDevice = new QModbusRtuSerialSlave(this);
+    modbusDevice = new QModbusRtuSerialServer(this);
 
     if (modbusDevice) {
         QModbusDataUnitMap reg;
