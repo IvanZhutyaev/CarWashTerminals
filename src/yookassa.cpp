@@ -43,26 +43,23 @@ void YooKassa::createPayment(double amount, const QString &description)
 {
     QNetworkRequest request(QUrl("https://api.yookassa.ru/v3/payments"));
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-    request.setRawHeader("Authorization", generateAuthHeader().toUtf8());
+    request.setRawHeader("Authorization", generateAuthHeader());
     request.setRawHeader("Idempotence-Key", generateIdempotenceKey().toUtf8());
 
-    QJsonObject paymentData;
-    QJsonObject amountObj;
-    amountObj["value"] = QString::number(amount, 'f', 2);
-    amountObj["currency"] = "RUB";
-    paymentData["amount"] = amountObj;
+    QJsonObject payment;
+    payment["amount"] = QJsonObject{
+        {"value", QString::number(amount, 'f', 2)},
+        {"currency", "RUB"}
+    };
+    payment["description"] = description;
+    payment["confirmation"] = QJsonObject{
+        {"type", "qr"},
+        {"return_url", "carwash://payment_result"}
+    };
+    payment["capture"] = true;
 
-    QJsonObject confirmation;
-    confirmation["type"] = "redirect";
-    confirmation["return_url"] = "carwash://payment_result";
-    paymentData["confirmation"] = confirmation;
-
-    paymentData["description"] = description;
-
-    QJsonDocument doc(paymentData);
-    QByteArray data = doc.toJson();
-
-    QNetworkReply *reply = m_networkManager->post(request, data);
+    QJsonDocument doc(payment);
+    QNetworkReply *reply = m_networkManager->post(request, doc.toJson());
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
         handlePaymentCreationResponse(reply);
     });
@@ -72,7 +69,7 @@ void YooKassa::checkPaymentStatus(const QString &paymentId)
 {
     QNetworkRequest request(QUrl(QString("https://api.yookassa.ru/v3/payments/%1").arg(paymentId)));
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-    request.setRawHeader("Authorization", generateAuthHeader().toUtf8());
+    request.setRawHeader("Authorization", generateAuthHeader());
 
     QNetworkReply *reply = m_networkManager->get(request);
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
@@ -80,10 +77,14 @@ void YooKassa::checkPaymentStatus(const QString &paymentId)
     });
 }
 
+QString YooKassa::getPaymentUrl(const QString &paymentId) const
+{
+    return m_paymentUrls.value(paymentId);
+}
+
 void YooKassa::handlePaymentCreationResponse(QNetworkReply *reply)
 {
     reply->deleteLater();
-
     if (reply->error() != QNetworkReply::NoError) {
         emit errorOccurred(reply->errorString());
         return;
@@ -92,11 +93,11 @@ void YooKassa::handlePaymentCreationResponse(QNetworkReply *reply)
     QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
     QJsonObject response = doc.object();
 
-    if (response.contains("confirmation") && response["confirmation"].isObject()) {
-        QJsonObject confirmation = response["confirmation"].toObject();
-        QString paymentUrl = confirmation["confirmation_url"].toString();
+    if (response.contains("id") && response.contains("confirmation")) {
         QString paymentId = response["id"].toString();
-        emit paymentCreated(paymentUrl, paymentId);
+        QString confirmationUrl = response["confirmation"].toObject()["confirmation_url"].toString();
+        m_paymentUrls[paymentId] = confirmationUrl;
+        emit paymentCreated(confirmationUrl, paymentId);
     } else {
         emit errorOccurred("Invalid response format");
     }
@@ -105,7 +106,6 @@ void YooKassa::handlePaymentCreationResponse(QNetworkReply *reply)
 void YooKassa::handleStatusCheckResponse(QNetworkReply *reply)
 {
     reply->deleteLater();
-
     if (reply->error() != QNetworkReply::NoError) {
         emit errorOccurred(reply->errorString());
         return;
@@ -115,14 +115,13 @@ void YooKassa::handleStatusCheckResponse(QNetworkReply *reply)
     QJsonObject response = doc.object();
 
     if (response.contains("status")) {
-        QString status = response["status"].toString();
-        emit paymentStatusReceived(status);
+        emit paymentStatusReceived(response["status"].toString());
     } else {
         emit errorOccurred("Invalid response format");
     }
 }
 
-QString YooKassa::generateAuthHeader() const
+QByteArray YooKassa::generateAuthHeader() const
 {
     QString auth = m_shopId + ":" + m_secretKey;
     return "Basic " + auth.toUtf8().toBase64();
