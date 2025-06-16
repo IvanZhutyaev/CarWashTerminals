@@ -149,6 +149,22 @@ Item {
             }
         }
     }
+
+    Column {
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: text_balance.bottom
+        anchors.topMargin: 20
+        spacing: 10
+
+        NewStyledButton {
+            buttonText: "ПОПОЛНИТЬ БАЛАНС"
+            width: 300
+            height: 80
+            onClicked: {
+                window.pushScreen("PaymentMethodSelection")
+            }
+        }
+    }
 }
 
 /*##^##

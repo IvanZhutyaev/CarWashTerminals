@@ -33,5 +33,8 @@ QtObject {
     readonly property int wallet: 6
     readonly property int registration: 7
     readonly property int login: 8
-
+    readonly property int payment_method_selection: 9
+    readonly property int spb_payment: 10
+    readonly property int cash_payment: 11
+    readonly property int cashless_payment: 12
 }

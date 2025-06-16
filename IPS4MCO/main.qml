@@ -3,6 +3,7 @@ import QtQuick.Controls 2.5
 import QtQuick.Shapes 1.12
 import IPS4MCO 1.0
 import "qml/single"
+import "qml/payment"
 
 
 ApplicationWindow {
@@ -68,7 +69,7 @@ ApplicationWindow {
 
     // Use definition fro, IPS4MCO.Constants
     function changePage (page) {
-        var visible_page = [false, false, false, false, false] // Expanded for 5 pages: Init, Error, Session, Registration, Login
+        var visible_page = [false, false, false, false, false, false, false, false, false, false, false, false] // Expanded for all pages
         visible_page[page] = true
 
         p_initialization.visible = visible_page[Constants.initialization]
@@ -76,8 +77,32 @@ ApplicationWindow {
         p_session.visible = visible_page[Constants.session]
         p_registration_screen.visible = visible_page[Constants.registration]
         p_login_screen.visible = visible_page[Constants.login]
+        p_payment_method_selection.visible = visible_page[Constants.payment_method_selection]
+        p_spb_payment.visible = visible_page[Constants.spb_payment]
+        p_cash_payment.visible = visible_page[Constants.cash_payment]
     }
 
+    function pushScreen(screenName) {
+        switch(screenName) {
+            case "PaymentMethodSelection":
+                changePage(Constants.payment_method_selection)
+                break
+            case "SPBPayment":
+                changePage(Constants.spb_payment)
+                break
+            case "CashPayment":
+                changePage(Constants.cash_payment)
+                break
+            case "CashlessPayment":
+                changePage(Constants.cashless_payment)
+                break
+        }
+    }
+
+    function popScreen() {
+        // TODO: Implement proper screen stack
+        changePage(Constants.session)
+    }
 
     Connections {
         target: backend
@@ -168,6 +193,23 @@ ApplicationWindow {
         visible: false
     }
 
+    PaymentMethodSelection {
+        id: p_payment_method_selection
+        anchors.fill: parent
+        visible: false
+    }
+
+    SPBPayment {
+        id: p_spb_payment
+        anchors.fill: parent
+        visible: false
+    }
+
+    CashPayment {
+        id: p_cash_payment
+        anchors.fill: parent
+        visible: false
+    }
 }
 
 
