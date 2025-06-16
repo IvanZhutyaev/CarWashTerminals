@@ -20,7 +20,7 @@ Item {
 
             Label {
                 Layout.fillWidth: true
-                text: "ОПЛАТА КАРТОЙ"
+                text: "ПРИЛОЖИТЕ КАРТУ"
                 font.pixelSize: 48
                 font.family: Constants.fontFamily
                 font.weight: Font.ExtraBold
@@ -37,6 +37,25 @@ Item {
                 horizontalAlignment: Text.AlignHCenter
             }
 
+            Rectangle {
+                Layout.alignment: Qt.AlignHCenter
+                Layout.preferredWidth: 300
+                Layout.preferredHeight: 200
+                color: color_cfg.background
+                border.color: color_cfg.first
+                border.width: 2
+                radius: 10
+
+                Label {
+                    anchors.centerIn: parent
+                    text: "ПРИЛОЖИТЕ\nКАРТУ\nСЮДА"
+                    font.pixelSize: 24
+                    font.family: Constants.fontFamily
+                    color: color_cfg.first
+                    horizontalAlignment: Text.AlignHCenter
+                }
+            }
+
             YooKassaPayment {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
@@ -44,13 +63,11 @@ Item {
                 description: "Пополнение баланса"
 
                 onPaymentCompleted: {
-                    // Обновляем баланс пользователя
                     backend.updateBalance(selectedAmount)
                     window.popScreen()
                 }
 
                 onPaymentFailed: {
-                    // Показываем ошибку
                     errorDialog.text = error
                     errorDialog.open()
                 }
@@ -66,8 +83,6 @@ Item {
         id: errorDialog
         title: "Ошибка"
         property alias text: errorText.text
-        modal: true
-        anchors.centerIn: parent
         standardButtons: Dialog.Ok
 
         Label {

@@ -42,7 +42,7 @@ Item {
 
             Label {
                 Layout.fillWidth: true
-                text: "ОТСКАНИРУЙТЕ QR-КОД\nВ ПРИЛОЖЕНИИ СПБ"
+                text: "ПРИЛОЖИТЕ КАРТУ\nИЛИ ОТСКАНИРУЙТЕ QR-КОД"
                 font.pixelSize: 36
                 font.family: Constants.fontFamily
                 font.weight: Font.Bold
@@ -62,7 +62,36 @@ Item {
                 Layout.preferredWidth: 300
                 Layout.preferredHeight: 300
                 visible: !isProcessing && paymentId !== ""
-                source: "image://qr/" + paymentId // Предполагается, что у вас есть провайдер для генерации QR-кодов
+                source: "image://qr/" + paymentId
+            }
+
+            Label {
+                Layout.fillWidth: true
+                text: "ИЛИ"
+                font.pixelSize: 24
+                font.family: Constants.fontFamily
+                color: color_cfg.first
+                horizontalAlignment: Text.AlignHCenter
+                visible: !isProcessing && paymentId !== ""
+            }
+
+            Rectangle {
+                Layout.alignment: Qt.AlignHCenter
+                Layout.preferredWidth: 300
+                Layout.preferredHeight: 200
+                color: color_cfg.background
+                border.color: color_cfg.first
+                border.width: 2
+                radius: 10
+
+                Label {
+                    anchors.centerIn: parent
+                    text: "ПРИЛОЖИТЕ\nКАРТУ\nСЮДА"
+                    font.pixelSize: 24
+                    font.family: Constants.fontFamily
+                    color: color_cfg.first
+                    horizontalAlignment: Text.AlignHCenter
+                }
             }
 
             NewStyledButton {
