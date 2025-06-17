@@ -1,4 +1,4 @@
-QT += qml quick serialport serialbus multimedia multimediawidgets sql quickcontrols2 network
+QT += core gui widgets qml quick serialport serialbus multimedia multimediawidgets sql quickcontrols2 network
 CONFIG += c++17
 
 #for debug TODO: Remove!
@@ -18,7 +18,10 @@ contains(QT_ARCH, x86_64) {
     SOURCES += ../qt-qrcode/quickitem/QtQrCodeQuickItem.cpp
     HEADERS += ../qt-qrcode/quickitem/QtQrCodeQuickItem.hpp
 }
-
+macx {
+    INCLUDEPATH += $$[QT_INSTALL_HEADERS]/QtNetwork
+    LIBS += -L$$[QT_INSTALL_LIBS] -lQt6Network
+}
 #include config_manager library
 INCLUDEPATH += ../config_manager/build/include
 LIBS += -L"../config_manager/build/lib" -lconfigmanager

@@ -7,8 +7,9 @@
 #include <QSqlError>
 #include <QDebug>
 #include <QCryptographicHash>
+#include <QtNetwork/qnetworkconfigurationmanager.h>
 #include <QHostInfo>
-#include <QtNetwork/QNetworkConfigurationManager>
+
 
 class AccountManager : public QObject
 {

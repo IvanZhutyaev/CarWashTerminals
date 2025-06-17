@@ -5,7 +5,7 @@
 
 
 #include <QModbusServer>
-#include <QModbusRtuSerialSlave>
+#include <QtSerialBus/qmodbusrtuserialserver.h>
 #include <QSerialPortInfo>
 #include <QSerialPort>
 #include <QTimer>
