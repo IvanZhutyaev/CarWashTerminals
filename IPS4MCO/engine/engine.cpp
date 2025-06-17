@@ -109,6 +109,12 @@ void Engine::initEvent() {
         logManager->addMsg("Успешное подключение к указанному COM порту.", "MBS");
     timer->start();
 
+
+    signals:
+        void loggedInChanged();
+        void currentBalanceChanged();
+        void loginMessageChanged();
+        void registrationMessageChanged();
     //=========================================
 }
 

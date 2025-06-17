@@ -7,7 +7,7 @@
 #include <QSqlError>
 #include <QDebug>
 #include <QCryptographicHash>
-#include <QNetworkConfigurationManager>
+#include "qnetworkconfigurationmanager.h"
 #include <QHostInfo>
 
 

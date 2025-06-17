@@ -1,4 +1,4 @@
-QT += core gui widgets qml quick serialport serialbus multimedia multimediawidgets sql quickcontrols2 network
+QT += core gui widgets qml quick serialport serialbus multimedia multimediawidgets sql quickcontrols2 network networkauth
 CONFIG += c++17
 
 #for debug TODO: Remove!
@@ -19,6 +19,7 @@ contains(QT_ARCH, x86_64) {
     HEADERS += ../qt-qrcode/quickitem/QtQrCodeQuickItem.hpp
 }
 macx {
+
     INCLUDEPATH += $$[QT_INSTALL_HEADERS]/QtNetwork
     LIBS += -L$$[QT_INSTALL_LIBS] -lQt6Network
 }
@@ -63,7 +64,8 @@ HEADERS += \
     errors.h \
     interfacecfg/colorconfig.h \
     pilotnt/pilotnt.h \
-    db_manager/database_manager.h
+    db_manager/database_manager.h \
+    qnetworkconfigurationmanager.h
 
 DISTFILES += \
     imports/IPS4MCO/Constants.qml \
