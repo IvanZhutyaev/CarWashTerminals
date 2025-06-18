@@ -81,6 +81,11 @@ signals:
     void colbalanceChanged(int colbalance);
     void colcashChanged(int colcash);
     void isPauseFreeChanged(bool ispause_free);
+    void loggedInChanged();
+    void currentBalanceChanged();
+    void loginMessageChanged();
+    void registrationMessageChanged();
+
 public slots:
     void cppSetButtons(int buttons);
     void cppClerButtonStateQr();
@@ -99,6 +104,8 @@ public slots:
     void setColbalance(int colbalance);
     void setColcash(int colcash);
     void setIsPauseFree(bool ispause_free);
+    void showPersonalAccount();
+    void hidePersonalAccount();
 
 private:
     enum States {

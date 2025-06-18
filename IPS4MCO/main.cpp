@@ -5,7 +5,7 @@
 #include <QtQuick/QQuickView>
 
 #include "engine/engine.h"
-#include "engine/account_manager.h"
+#include "accountmanager/accountmanager.h"
 #include "yookassa.h"
 #include "qrcodeprovider.h"
 

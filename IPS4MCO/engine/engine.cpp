@@ -15,10 +15,10 @@ Engine::Engine(QString appdir, LogManager *logmanager, QObject *parent) : QObjec
 
     // Initialize AccountManager
     m_accountManager = new AccountManager(this);
-    connect(m_accountManager, &AccountManager::loggedInChanged, [this]() { emit loggedInChanged(); }); // Example connection
-    connect(m_accountManager, &AccountManager::currentBalanceChanged, [this]() { emit currentBalanceChanged(); });
-    connect(m_accountManager, &AccountManager::loginMessageChanged, [this]() { emit loginMessageChanged(); });
-    connect(m_accountManager, &AccountManager::registrationMessageChanged, [this]() { emit registrationMessageChanged(); });
+    connect(m_accountManager, &AccountManager::loggedInChanged, this, &Engine::loggedInChanged);
+    connect(m_accountManager, &AccountManager::currentBalanceChanged, this, &Engine::currentBalanceChanged);
+    connect(m_accountManager, &AccountManager::loginMessageChanged, this, &Engine::loginMessageChanged);
+    connect(m_accountManager, &AccountManager::registrationMessageChanged, this, &Engine::registrationMessageChanged);
     connect(m_accountManager, &AccountManager::showPersonalAccount, this, &Engine::showPersonalAccount); // Forward signal
     connect(m_accountManager, &AccountManager::hidePersonalAccount, this, &Engine::hidePersonalAccount); // Forward signal
 
@@ -109,12 +109,6 @@ void Engine::initEvent() {
         logManager->addMsg("Успешное подключение к указанному COM порту.", "MBS");
     timer->start();
 
-
-    signals:
-        void loggedInChanged();
-        void currentBalanceChanged();
-        void loginMessageChanged();
-        void registrationMessageChanged();
     //=========================================
 }
 
@@ -786,6 +780,14 @@ void Engine::updateBalance(int amount) {
     } else {
         logManager->addMsg("Ошибка обновления баланса: AccountManager не инициализирован", "Payment", "Ошибка");
     }
+}
+
+void Engine::showPersonalAccount() {
+    // Реализация по необходимости
+}
+
+void Engine::hidePersonalAccount() {
+    // Реализация по необходимости
 }
 
 
