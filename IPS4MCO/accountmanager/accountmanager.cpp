@@ -269,4 +269,9 @@ void AccountManager::syncData() {
     // TODO: Implement actual synchronization logic between central and local DBs
     // This would involve comparing timestamps or versions and pushing/pulling changes.
     qDebug() << "Synchronization triggered (not fully implemented yet).";
+}
+
+void AccountManager::updateBalance(int amount) {
+    // TODO: Реализуйте обновление баланса пользователя
+    Q_UNUSED(amount);
 } 

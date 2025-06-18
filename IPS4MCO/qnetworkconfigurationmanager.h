@@ -5,7 +5,7 @@
 class QNetworkConfigurationManager : public QObject {
     Q_OBJECT
 public:
-    explicit QNetworkConfigurationManager(QObject *parent = nullptr) {}
+    explicit QNetworkConfigurationManager(QObject *parent = nullptr) { Q_UNUSED(parent); }
     bool isOnline() const { return true; }
 };
 

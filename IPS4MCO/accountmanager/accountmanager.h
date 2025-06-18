@@ -45,6 +45,7 @@ public slots:
     void logoutUser();
     void checkNetworkStatus();
     void syncData(); // For future synchronization logic
+    void updateBalance(int amount);
 
 private:
     QSqlDatabase m_centralDb; // PostgreSQL
