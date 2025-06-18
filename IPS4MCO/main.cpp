@@ -9,7 +9,6 @@
 #include "yookassa.h"
 #include "qrcodeprovider.h"
 
-#include "QtQrCode"
 #include "../qt-qrcode/quickitem/QtQrCodeQuickItem.hpp"
 
 
