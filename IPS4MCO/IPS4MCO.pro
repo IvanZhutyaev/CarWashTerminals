@@ -27,6 +27,8 @@ macx {
 INCLUDEPATH += ../config_manager/build/include
 LIBS += -L"../config_manager/build/lib" -lconfigmanager
 
+#include yookassa library
+INCLUDEPATH += ../include
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.

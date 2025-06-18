@@ -6,7 +6,7 @@
 
 #include "engine/engine.h"
 #include "accountmanager/accountmanager.h"
-#include "include/yookassa.h"
+#include "yookassa.h"
 #include "qrcodeprovider.h"
 
 #include "QtQrCode"
