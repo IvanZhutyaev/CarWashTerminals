@@ -78,6 +78,10 @@ template <> constexpr inline auto Engine::qt_create_metaobjectdata<qt_meta_tag_Z
         "colcash",
         "isPauseFreeChanged",
         "ispause_free",
+        "loggedInChanged",
+        "currentBalanceChanged",
+        "loginMessageChanged",
+        "registrationMessageChanged",
         "cppSetButtons",
         "cppClerButtonStateQr",
         "cppClerButtonStateWallet",
@@ -96,6 +100,8 @@ template <> constexpr inline auto Engine::qt_create_metaobjectdata<qt_meta_tag_Z
         "setColbalance",
         "setColcash",
         "setIsPauseFree",
+        "showPersonalAccount",
+        "hidePersonalAccount",
         "tEvent",
         "delayTimerSlot",
         "reconnectTimerSlot",
@@ -197,75 +203,87 @@ template <> constexpr inline auto Engine::qt_create_metaobjectdata<qt_meta_tag_Z
         QtMocHelpers::SignalData<void(bool)>(38, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::Bool, 39 },
         }}),
+        // Signal 'loggedInChanged'
+        QtMocHelpers::SignalData<void()>(40, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'currentBalanceChanged'
+        QtMocHelpers::SignalData<void()>(41, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'loginMessageChanged'
+        QtMocHelpers::SignalData<void()>(42, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'registrationMessageChanged'
+        QtMocHelpers::SignalData<void()>(43, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'cppSetButtons'
-        QtMocHelpers::SlotData<void(int)>(40, 2, QMC::AccessPublic, QMetaType::Void, {{
+        QtMocHelpers::SlotData<void(int)>(44, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::Int, 17 },
         }}),
         // Slot 'cppClerButtonStateQr'
-        QtMocHelpers::SlotData<void()>(41, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(45, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'cppClerButtonStateWallet'
-        QtMocHelpers::SlotData<void()>(42, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(46, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'cppSendPayment'
-        QtMocHelpers::SlotData<void(int, int)>(43, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Int, 44 }, { QMetaType::Int, 45 },
+        QtMocHelpers::SlotData<void(int, int)>(47, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 48 }, { QMetaType::Int, 49 },
         }}),
         // Slot 'setBalance'
-        QtMocHelpers::SlotData<void(int)>(46, 2, QMC::AccessPublic, QMetaType::Void, {{
+        QtMocHelpers::SlotData<void(int)>(50, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::Int, 21 },
         }}),
         // Slot 'setTime'
-        QtMocHelpers::SlotData<void(QString)>(47, 2, QMC::AccessPublic, QMetaType::Void, {{
+        QtMocHelpers::SlotData<void(QString)>(51, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::QString, 23 },
         }}),
         // Slot 'setPauseTime'
-        QtMocHelpers::SlotData<void(QString)>(48, 2, QMC::AccessPublic, QMetaType::Void, {{
+        QtMocHelpers::SlotData<void(QString)>(52, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::QString, 25 },
         }}),
         // Slot 'setDiscountfix'
-        QtMocHelpers::SlotData<void(int)>(49, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Int, 50 },
+        QtMocHelpers::SlotData<void(int)>(53, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 54 },
         }}),
         // Slot 'setDiscountacc'
-        QtMocHelpers::SlotData<void(int)>(51, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Int, 52 },
+        QtMocHelpers::SlotData<void(int)>(55, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 56 },
         }}),
         // Slot 'setDeposit'
-        QtMocHelpers::SlotData<void(int)>(53, 2, QMC::AccessPublic, QMetaType::Void, {{
+        QtMocHelpers::SlotData<void(int)>(57, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::Int, 31 },
         }}),
         // Slot 'setDate'
-        QtMocHelpers::SlotData<void(QString)>(54, 2, QMC::AccessPublic, QMetaType::Void, {{
+        QtMocHelpers::SlotData<void(QString)>(58, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::QString, 33 },
         }}),
         // Slot 'setColbalance'
-        QtMocHelpers::SlotData<void(int)>(55, 2, QMC::AccessPublic, QMetaType::Void, {{
+        QtMocHelpers::SlotData<void(int)>(59, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::Int, 35 },
         }}),
         // Slot 'setColcash'
-        QtMocHelpers::SlotData<void(int)>(56, 2, QMC::AccessPublic, QMetaType::Void, {{
+        QtMocHelpers::SlotData<void(int)>(60, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::Int, 37 },
         }}),
         // Slot 'setIsPauseFree'
-        QtMocHelpers::SlotData<void(bool)>(57, 2, QMC::AccessPublic, QMetaType::Void, {{
+        QtMocHelpers::SlotData<void(bool)>(61, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::Bool, 39 },
         }}),
+        // Slot 'showPersonalAccount'
+        QtMocHelpers::SlotData<void()>(62, 2, QMC::AccessPublic, QMetaType::Void),
+        // Slot 'hidePersonalAccount'
+        QtMocHelpers::SlotData<void()>(63, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'tEvent'
-        QtMocHelpers::SlotData<void()>(58, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(64, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'delayTimerSlot'
-        QtMocHelpers::SlotData<void()>(59, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(65, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'reconnectTimerSlot'
-        QtMocHelpers::SlotData<void()>(60, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(66, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'initTimerSlot'
-        QtMocHelpers::SlotData<void()>(61, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(67, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'paymentBankHandler'
-        QtMocHelpers::SlotData<void(int)>(62, 2, QMC::AccessPrivate, QMetaType::Void, {{
+        QtMocHelpers::SlotData<void(int)>(68, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Int, 6 },
         }}),
         // Slot 'showSessionLocal'
-        QtMocHelpers::SlotData<void()>(63, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(69, 2, QMC::AccessPrivate, QMetaType::Void),
         // Method 'updateBalance'
-        QtMocHelpers::MethodData<void(int)>(64, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Int, 65 },
+        QtMocHelpers::MethodData<void(int)>(70, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 71 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -290,7 +308,7 @@ template <> constexpr inline auto Engine::qt_create_metaobjectdata<qt_meta_tag_Z
         // property 'ispause_free'
         QtMocHelpers::PropertyData<bool>(39, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable, 23),
         // property 'accountManager'
-        QtMocHelpers::PropertyData<AccountManager*>(66, 0x80000000 | 67, QMC::DefaultPropertyFlags | QMC::EnumOrFlag | QMC::Constant),
+        QtMocHelpers::PropertyData<AccountManager*>(72, 0x80000000 | 73, QMC::DefaultPropertyFlags | QMC::EnumOrFlag | QMC::Constant),
     };
     QtMocHelpers::UintData qt_enums {
     };
@@ -336,27 +354,33 @@ void Engine::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         case 21: _t->colbalanceChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 22: _t->colcashChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 23: _t->isPauseFreeChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 24: _t->cppSetButtons((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 25: _t->cppClerButtonStateQr(); break;
-        case 26: _t->cppClerButtonStateWallet(); break;
-        case 27: _t->cppSendPayment((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2]))); break;
-        case 28: _t->setBalance((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 29: _t->setTime((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 30: _t->setPauseTime((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 31: _t->setDiscountfix((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 32: _t->setDiscountacc((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 33: _t->setDeposit((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 34: _t->setDate((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 35: _t->setColbalance((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 36: _t->setColcash((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 37: _t->setIsPauseFree((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 38: _t->tEvent(); break;
-        case 39: _t->delayTimerSlot(); break;
-        case 40: _t->reconnectTimerSlot(); break;
-        case 41: _t->initTimerSlot(); break;
-        case 42: _t->paymentBankHandler((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 43: _t->showSessionLocal(); break;
-        case 44: _t->updateBalance((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 24: _t->loggedInChanged(); break;
+        case 25: _t->currentBalanceChanged(); break;
+        case 26: _t->loginMessageChanged(); break;
+        case 27: _t->registrationMessageChanged(); break;
+        case 28: _t->cppSetButtons((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 29: _t->cppClerButtonStateQr(); break;
+        case 30: _t->cppClerButtonStateWallet(); break;
+        case 31: _t->cppSendPayment((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2]))); break;
+        case 32: _t->setBalance((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 33: _t->setTime((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 34: _t->setPauseTime((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 35: _t->setDiscountfix((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 36: _t->setDiscountacc((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 37: _t->setDeposit((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 38: _t->setDate((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 39: _t->setColbalance((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 40: _t->setColcash((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 41: _t->setIsPauseFree((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 42: _t->showPersonalAccount(); break;
+        case 43: _t->hidePersonalAccount(); break;
+        case 44: _t->tEvent(); break;
+        case 45: _t->delayTimerSlot(); break;
+        case 46: _t->reconnectTimerSlot(); break;
+        case 47: _t->initTimerSlot(); break;
+        case 48: _t->paymentBankHandler((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 49: _t->showSessionLocal(); break;
+        case 50: _t->updateBalance((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     }
@@ -404,6 +428,14 @@ void Engine::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         if (QtMocHelpers::indexOfMethod<void (Engine::*)(int )>(_a, &Engine::colcashChanged, 22))
             return;
         if (QtMocHelpers::indexOfMethod<void (Engine::*)(bool )>(_a, &Engine::isPauseFreeChanged, 23))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (Engine::*)()>(_a, &Engine::loggedInChanged, 24))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (Engine::*)()>(_a, &Engine::currentBalanceChanged, 25))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (Engine::*)()>(_a, &Engine::loginMessageChanged, 26))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (Engine::*)()>(_a, &Engine::registrationMessageChanged, 27))
             return;
     }
     if (_c == QMetaObject::RegisterPropertyMetaType) {
@@ -467,14 +499,14 @@ int Engine::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 45)
+        if (_id < 51)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 45;
+        _id -= 51;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 45)
+        if (_id < 51)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 45;
+        _id -= 51;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty
@@ -615,5 +647,29 @@ void Engine::colcashChanged(int _t1)
 void Engine::isPauseFreeChanged(bool _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 23, nullptr, _t1);
+}
+
+// SIGNAL 24
+void Engine::loggedInChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 24, nullptr);
+}
+
+// SIGNAL 25
+void Engine::currentBalanceChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 25, nullptr);
+}
+
+// SIGNAL 26
+void Engine::loginMessageChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 26, nullptr);
+}
+
+// SIGNAL 27
+void Engine::registrationMessageChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 27, nullptr);
 }
 QT_WARNING_POP

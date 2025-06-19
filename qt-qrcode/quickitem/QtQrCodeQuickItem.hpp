@@ -28,13 +28,13 @@
 #ifndef QTQRCODEQUICKITEM_HPP
 #define QTQRCODEQUICKITEM_HPP
 
+#include <cstdint>
+#include <climits>
 #include <QColor>
 #include <QByteArray>
 #include <QQuickPaintedItem>
-
-#include <QtQrCode>
-#include <QtQrCodePainter>
-
+#include "../lib/QtQrCode"
+#include "../lib/QtQrCodePainter"
 QT_BEGIN_NAMESPACE
 class QPainter;
 QT_END_NAMESPACE

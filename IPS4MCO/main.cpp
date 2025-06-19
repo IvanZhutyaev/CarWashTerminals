@@ -13,7 +13,7 @@
 
 
 int main(int argc, char *argv[]) {
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+
 
     QGuiApplication app(argc, argv);
     QQuickStyle::setStyle("Material");
@@ -57,7 +57,7 @@ int main(int argc, char *argv[]) {
     qApp->setOverrideCursor(QCursor( Qt::BlankCursor ));
     if (argc > 1) {
         qDebug() << "argv: " << argv[1];
-        if (QVariant(argv[1]).toString() == "-c")
+        if (QString(argv[1]) == "-c")
             qApp->setOverrideCursor(QCursor( Qt::ArrowCursor));
     }
 

@@ -1,6 +1,6 @@
-/home/user/ips4mco/config_manager/build/ibasictype.o: \
- /home/user/ips4mco/config_manager/ibasictype.cpp \
- /home/user/ips4mco/config_manager/ibasictype.h \
- /home/user/ips4mco/config_manager/itype.h
-/home/user/ips4mco/config_manager/ibasictype.h:
-/home/user/ips4mco/config_manager/itype.h:
+/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/ibasictype.o: \
+  /Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/ibasictype.cpp \
+  /Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/ibasictype.h \
+  /Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/itype.h
+/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/ibasictype.h:
+/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/itype.h:

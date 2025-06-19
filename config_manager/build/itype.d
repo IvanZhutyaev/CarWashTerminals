@@ -1,4 +1,4 @@
-/home/user/ips4mco/config_manager/build/itype.o: \
- /home/user/ips4mco/config_manager/itype.cpp \
- /home/user/ips4mco/config_manager/itype.h
-/home/user/ips4mco/config_manager/itype.h:
+/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/itype.o: \
+  /Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/itype.cpp \
+  /Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/itype.h
+/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/itype.h:

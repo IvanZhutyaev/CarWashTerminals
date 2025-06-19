@@ -1,4 +1,5 @@
 #include "accountmanager.h"
+#include <QNetworkInformation>
 
 AccountManager::AccountManager(QObject *parent) : QObject(parent) {
     // Central Database (PostgreSQL)
@@ -15,7 +16,10 @@ AccountManager::AccountManager(QObject *parent) : QObject(parent) {
 
     // Network status manager
     m_networkConfigManager = new QNetworkConfigurationManager(this);
-    connect(m_networkConfigManager, &QNetworkConfigurationManager::onlineStateChanged, this, &AccountManager::setIsOnline);
+    connect(QNetworkInformation::instance(), &QNetworkInformation::reachabilityChanged,
+            this, [this](QNetworkInformation::Reachability reachability) {
+                setIsOnline(reachability == QNetworkInformation::Reachability::Online);
+            });
 
     // Initial network check
     checkNetworkStatus();
@@ -185,7 +189,9 @@ void AccountManager::registerUser(const QString &phoneNumber, const QString &pas
         return;
     }
 
-    if (password.length() != 6 || !password.toLongLong(&) || password.contains(".")) {
+    bool ok;
+    password.toLongLong(&ok);
+    if (password.length() != 6 || !ok || password.contains(".")) {
         setRegistrationMessage("Пароль должен быть 6-значным числом.");
         emit registrationStatus(false, m_registrationMessage);
         return;
@@ -199,7 +205,7 @@ void AccountManager::registerUser(const QString &phoneNumber, const QString &pas
     query.bindValue(":password", hashedPassword);
 
     if (!query.exec()) {
-        if (query.lastError().number() == 23505) { // PostgreSQL unique violation error code
+        if (query.lastError().type() == QSqlError::UniqueConstraintError) { // PostgreSQL unique violation error code
             setRegistrationMessage("Пользователь с таким номером телефона уже зарегистрирован.");
         } else {
             setRegistrationMessage("Ошибка регистрации: " + query.lastError().text());
@@ -214,40 +220,22 @@ void AccountManager::registerUser(const QString &phoneNumber, const QString &pas
     closeCentralDatabase();
 }
 
-void AccountManager::loginUser(const QString &phoneNumber, const QString &password) {
-    if (!m_isOnline) {
-        setLoginMessage("Вход временно недоступен: нет подключения к серверу.");
-        emit loginStatus(false, m_loginMessage);
-        return;
+void AccountManager::handleDatabaseError(const QSqlQuery &query)
+{
+    QString errorCode = query.lastError().nativeErrorCode();
+    QString errorText = query.lastError().text();
+
+    // Проверка для PostgreSQL
+    if (errorCode == "23505" || errorText.contains("unique", Qt::CaseInsensitive)) {
+        emit registrationFailed("Пользователь с таким email уже существует");
     }
-
-    if (!openCentralDatabase()) {
-        setLoginMessage("Ошибка входа: не удалось подключиться к серверу базы данных.");
-        emit loginStatus(false, m_loginMessage);
-        return;
+    // Проверка для SQLite
+    else if (errorCode == "19" || errorText.contains("UNIQUE constraint", Qt::CaseInsensitive)) {
+        emit registrationFailed("Пользователь с таким email уже существует");
     }
-
-    QString hashedPassword = hashPassword(password);
-
-    QSqlQuery query(m_centralDb);
-    query.prepare("SELECT id, balance FROM users WHERE phone_number = :phone AND password_hash = :password");
-    query.bindValue(":phone", phoneNumber);
-    query.bindValue(":password", hashedPassword);
-
-    if (query.exec() && query.next()) {
-        m_currentUserId = query.value("id").toString();
-        setCurrentBalance(query.value("balance").toString());
-        setLoggedIn(true);
-        setLoginMessage("Вход выполнен успешно!");
-        emit loginStatus(true, m_loginMessage);
-        emit showPersonalAccount(); // Signal to show personal account view
-    } else {
-        setLoggedIn(false);
-        setLoginMessage("Неверный номер телефона или пароль.");
-        emit loginStatus(false, m_loginMessage);
-        emit hidePersonalAccount(); // Ensure personal account view is hidden
+    else {
+        emit registrationFailed("Ошибка базы данных: " + errorText);
     }
-    closeCentralDatabase();
 }
 
 void AccountManager::logoutUser() {
