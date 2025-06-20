@@ -66,6 +66,9 @@ SOURCES += \
     main.cpp \
     pilotnt/pilotnt.cpp \
     db_manager/database_manager.cpp
+    qtqrcode.cpp \
+    qtqrcodepainter.cpp \
+    yookassa.cpp
 
 # Ресурсы
 RESOURCES += qml.qrc

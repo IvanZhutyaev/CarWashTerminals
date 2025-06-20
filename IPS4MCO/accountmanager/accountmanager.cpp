@@ -262,4 +262,8 @@ void AccountManager::syncData() {
 void AccountManager::updateBalance(int amount) {
     // TODO: Реализуйте обновление баланса пользователя
     Q_UNUSED(amount);
-} 
+}
+
+void AccountManager::loginUser(const QString& username, const QString& password) {
+    // TODO: Реализовать авторизацию пользователя
+}

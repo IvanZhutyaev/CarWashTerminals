@@ -7,37 +7,10 @@
 #include <QDebug>
 #include <QByteArray>
 
-YooKassa::YooKassa(QObject *parent)
-    : QObject(parent)
-    , m_networkManager(new QNetworkAccessManager(this))
-{
-}
-
-QString YooKassa::shopId() const
-{
-    return m_shopId;
-}
-
-void YooKassa::setShopId(const QString &shopId)
-{
-    if (m_shopId != shopId) {
-        m_shopId = shopId;
-        emit shopIdChanged();
-    }
-}
-
-QString YooKassa::secretKey() const
-{
-    return m_secretKey;
-}
-
-void YooKassa::setSecretKey(const QString &secretKey)
-{
-    if (m_secretKey != secretKey) {
-        m_secretKey = secretKey;
-        emit secretKeyChanged();
-    }
-}
+YooKassa::YooKassa(QObject* parent) : QObject(parent) {}
+YooKassa::~YooKassa() {}
+void YooKassa::setSecretKey(const QString&) {}
+void YooKassa::setShopId(const QString&) {}
 
 void YooKassa::createPayment(double amount, const QString &description)
 {
@@ -130,4 +103,4 @@ QByteArray YooKassa::generateAuthHeader() const
 QString YooKassa::generateIdempotenceKey() const
 {
     return QUuid::createUuid().toString(QUuid::WithoutBraces);
-} 
+}

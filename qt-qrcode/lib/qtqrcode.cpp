@@ -58,13 +58,10 @@ QtQrCode::QtQrCode(QtQrCode::EncodeMode encodeMod) : d(new QtQrCodeData)
     constructorPrivate("", 0, encodeMod);
 }
 
-QtQrCode::QtQrCode(const QByteArray &data, int version, QtQrCode::EncodeMode encodeMode,
-                   QtQrCode::Proportion proportion, Qt::CaseSensitivity caseSensitivity,
-                   QtQrCode::ErrorCorrectionLevel errorCorrectionLevel)
-    : d(new QtQrCodeData)
-{
-    constructorPrivate(data, version, encodeMode, proportion,caseSensitivity, errorCorrectionLevel);
-}
+QtQrCode::QtQrCode(const QByteArray&, int, EncodeMode, Proportion, Qt::CaseSensitivity, ErrorCorrectionLevel) {}
+QtQrCode::~QtQrCode() {}
+void QtQrCode::setData(const QByteArray&) {}
+QByteArray QtQrCode::data() const { return {}; }
 
 void QtQrCode::constructorPrivate(const QByteArray &data, int version, QtQrCode::EncodeMode encodeMode,
                              QtQrCode::Proportion proportion, Qt::CaseSensitivity caseSensitivity,
@@ -88,10 +85,6 @@ QtQrCode &QtQrCode::operator=(const QtQrCode &rhs)
     if (this != &rhs)
         d.operator=(rhs.d);
     return *this;
-}
-
-QtQrCode::~QtQrCode()
-{
 }
 
 void QtQrCode::encode()
@@ -190,19 +183,6 @@ void QtQrCode::setVersion(int version)
             d->version = 0;
         else
             d->version = discardNegativeNumber(version);
-        this->encode();
-    }
-}
-
-QByteArray QtQrCode::data() const
-{
-     return d->data;
-}
-
-void QtQrCode::setData(const QByteArray &data)
-{
-    if (data != d->data) {
-        d->data = data;
         this->encode();
     }
 }

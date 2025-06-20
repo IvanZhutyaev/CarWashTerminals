@@ -31,15 +31,9 @@
 #include <QRectF>
 #include <QSvgGenerator>
 
-QtQrCodePainter::QtQrCodePainter(float margin, const QBrush &background, const QBrush &foreground)
-    : m_margin(margin), m_offsetX(0.0), m_offsetY(0.0), m_svgPaint(false),
-      m_background(background), m_foreground(foreground)
-{
-}
-
-QtQrCodePainter::~QtQrCodePainter()
-{
-}
+QtQrCodePainter::QtQrCodePainter(float, const QBrush&, const QBrush&) {}
+QtQrCodePainter::~QtQrCodePainter() {}
+void QtQrCodePainter::paint(const QtQrCode&, QPainter&, int, int) {}
 
 void QtQrCodePainter::paint(const QtQrCode &qrCode, QPainter &painter)
 {

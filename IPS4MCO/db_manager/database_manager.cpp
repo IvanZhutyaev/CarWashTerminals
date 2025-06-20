@@ -145,6 +145,10 @@ void DatabaseManager::processOfflineQueue()
     emit syncCompleted();
 }
 
+void DatabaseManager::processSyncQueue() {
+    // TODO: Реализовать обработку очереди синхронизации
+}
+
 void DatabaseManager::checkConnection()
 {
     if (!m_db.isOpen()) {
@@ -190,4 +194,4 @@ bool DatabaseManager::createTables()
 void DatabaseManager::startSyncTimer()
 {
     m_syncTimer.start();
-} 
+}
