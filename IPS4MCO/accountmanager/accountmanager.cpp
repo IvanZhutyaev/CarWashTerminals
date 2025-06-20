@@ -205,7 +205,7 @@ void AccountManager::registerUser(const QString &phoneNumber, const QString &pas
     query.bindValue(":password", hashedPassword);
 
     if (!query.exec()) {
-        if (query.lastError().type() == QSqlError::UniqueConstraintError) { // PostgreSQL unique violation error code
+        if (query.lastError().nativeErrorCode() == "23505") { // PostgreSQL unique violation error code
             setRegistrationMessage("Пользователь с таким номером телефона уже зарегистрирован.");
         } else {
             setRegistrationMessage("Ошибка регистрации: " + query.lastError().text());

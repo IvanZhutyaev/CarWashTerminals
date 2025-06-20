@@ -29,6 +29,7 @@ public:
     QString registrationMessage() const { return m_registrationMessage; }
 
 signals:
+
     void loggedInChanged();
     void currentBalanceChanged();
     void loginMessageChanged();
@@ -38,7 +39,7 @@ signals:
     void registrationStatus(bool success, QString message);
     void loginStatus(bool success, QString message);
     void networkStatusChanged(bool isOnline);
-
+    void registrationFailed(const QString &message);
 public slots:
     void registerUser(const QString &phoneNumber, const QString &password);
     void loginUser(const QString &phoneNumber, const QString &password);
@@ -61,6 +62,7 @@ private:
     void setLoginMessage(const QString &message);
     void setRegistrationMessage(const QString &message);
     void setIsOnline(bool online);
+    void handleDatabaseError(const QSqlQuery &query);
 
     bool openCentralDatabase();
     void closeCentralDatabase();

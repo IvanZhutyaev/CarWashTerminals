@@ -1,4 +1,4 @@
-# Определение базовых параметров проекта
+    # Определение базовых параметров проекта
 QT += core gui widgets \
       qml quick \
       serialport serialbus \
@@ -72,6 +72,7 @@ RESOURCES += qml.qrc
 
 # Заголовочные файлы
 HEADERS += \
+    accountmanager/accountmanager.h \
     accountmanager/accountmanager.cpp \
     $$QTQRCODE_PATH/quickitem/QtQrCodeQuickItem.hpp \
     controller/modbuscontroller.h \
