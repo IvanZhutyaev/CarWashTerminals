@@ -38,7 +38,8 @@ contains(QT_ARCH, i386) {
 contains(QT_ARCH, x86_64) {
     # 64-битная версия
     LIBS += -L"$$QTQRCODE_PATH/release/lib" -lqtqrcode
-    INCLUDEPATH += $$PWD/../qt-qrcode/include
+    #INCLUDEPATH += $$PWD/../qt-qrcode/include
+
 }
 
 # Специфичные настройки для MacOS
@@ -66,9 +67,9 @@ SOURCES += \
     main.cpp \
     pilotnt/pilotnt.cpp \
     db_manager/database_manager.cpp \
-    qtqrcode.cpp \
-    qtqrcodepainter.cpp \
-    yookassa.cpp
+    $$QTQRCODE_PATH/lib/qtqrcode.cpp \
+    $$QTQRCODE_PATH/lib/qtqrcodepainter.cpp \
+    yookassa.cpp \
 
 # Ресурсы
 RESOURCES += qml.qrc
