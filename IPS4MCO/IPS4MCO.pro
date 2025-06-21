@@ -5,7 +5,8 @@ QT += core gui widgets \
       multimedia multimediawidgets \
       sql \
       quickcontrols2 \
-      network networkauth
+      network networkauth \
+      svg \
 
 CONFIG += c++17
 
@@ -69,7 +70,7 @@ SOURCES += \
     db_manager/database_manager.cpp \
     $$QTQRCODE_PATH/lib/qtqrcode.cpp \
     $$QTQRCODE_PATH/lib/qtqrcodepainter.cpp \
-    yookassa.cpp \
+    src/yookassa.cpp \
 
 # Ресурсы
 RESOURCES += qml.qrc
