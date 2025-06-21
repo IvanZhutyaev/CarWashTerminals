@@ -88,7 +88,8 @@ HEADERS += \
     interfacecfg/colorconfig.h \
     pilotnt/pilotnt.h \
     db_manager/database_manager.h \
-    qnetworkconfigurationmanager.h
+    qnetworkconfigurationmanager.h \
+    ../include/yookassa.h
 
 # QML файлы (можно оставить как было)
 DISTFILES += \

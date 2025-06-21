@@ -17,7 +17,7 @@ class YooKassa : public QObject
 
 public:
     explicit YooKassa(QObject *parent = nullptr);
-
+    ~YooKassa();
     QString shopId() const { return m_shopId; }
     void setShopId(const QString &shopId);
 

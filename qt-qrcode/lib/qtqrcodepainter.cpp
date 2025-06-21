@@ -33,7 +33,7 @@
 
 QtQrCodePainter::QtQrCodePainter(float, const QBrush&, const QBrush&) {}
 QtQrCodePainter::~QtQrCodePainter() {}
-void QtQrCodePainter::paint(const QtQrCode&, QPainter&, int, int) {}
+//void QtQrCodePainter::paint(const QtQrCode&, QPainter&, int, int) {}          --заглушка :)
 
 void QtQrCodePainter::paint(const QtQrCode &qrCode, QPainter &painter)
 {

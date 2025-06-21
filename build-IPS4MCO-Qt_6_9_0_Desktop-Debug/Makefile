@@ -14,10 +14,10 @@ EQ            = =
 
 CC            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
 CXX           = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
-DEFINES       = -DQT_QML_DEBUG -DQT_MULTIMEDIAWIDGETS_LIB -DQT_WIDGETS_LIB -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_OPENGL_LIB -DQT_MULTIMEDIA_LIB -DQT_GUI_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QMLINTEGRATION_LIB -DQT_SERIALBUS_LIB -DQT_NETWORKAUTH_LIB -DQT_NETWORK_LIB -DQT_SERIALPORT_LIB -DQT_SQL_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_QML_DEBUG -DQT_MULTIMEDIAWIDGETS_LIB -DQT_WIDGETS_LIB -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_OPENGL_LIB -DQT_MULTIMEDIA_LIB -DQT_SVG_LIB -DQT_GUI_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QMLINTEGRATION_LIB -DQT_SERIALBUS_LIB -DQT_NETWORKAUTH_LIB -DQT_NETWORK_LIB -DQT_SERIALPORT_LIB -DQT_SQL_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -mmacosx-version-min=14.0 -Wall -Wextra $(DEFINES)
 CXXFLAGS      = -pipe -stdlib=libc++ -g -std=gnu++1z $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -mmacosx-version-min=14.0 -Wall -Wextra $(DEFINES)
-INCPATH       = -I../IPS4MCO -I. -I../qt-qrcode -I../qt-qrcode/quickitem -I/Users/temamodder/Documents/Repositories/CarWashTerminals/IPS4MCO/../qt-qrcode/include -I../qt-qrcode/lib -I../config_manager/build/include -I../include -I/opt/homebrew/lib/QtMultimediaWidgets.framework/Headers -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtQuickControls2.framework/Headers -I/opt/homebrew/lib/QtQuick.framework/Headers -I/opt/homebrew/lib/QtOpenGL.framework/Headers -I/opt/homebrew/lib/QtMultimedia.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtQmlMeta.framework/Headers -I/opt/homebrew/lib/QtQmlModels.framework/Headers -I/opt/homebrew/lib/QtQmlWorkerScript.framework/Headers -I/opt/homebrew/lib/QtQml.framework/Headers -I/opt/homebrew/include -I/opt/homebrew/include/QtQmlIntegration -I/opt/homebrew/lib/QtSerialBus.framework/Headers -I/opt/homebrew/lib/QtNetworkAuth.framework/Headers -I/opt/homebrew/lib/QtNetwork.framework/Headers -I/opt/homebrew/lib/QtSerialPort.framework/Headers -I/opt/homebrew/lib/QtSql.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/System/Library/Frameworks/AGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/System/Library/Frameworks/AGL.framework/Headers -I/opt/homebrew/share/qt/mkspecs/macx-clang -F/opt/homebrew/lib
+INCPATH       = -I../IPS4MCO -I. -I../qt-qrcode -I../qt-qrcode/quickitem -I/Users/temamodder/Documents/Repositories/CarWashTerminals/IPS4MCO/../qt-qrcode/include -I../qt-qrcode/lib -I../config_manager/build/include -I../include -I/opt/homebrew/lib/QtMultimediaWidgets.framework/Headers -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtQuickControls2.framework/Headers -I/opt/homebrew/lib/QtQuick.framework/Headers -I/opt/homebrew/lib/QtOpenGL.framework/Headers -I/opt/homebrew/lib/QtMultimedia.framework/Headers -I/opt/homebrew/lib/QtSvg.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtQmlMeta.framework/Headers -I/opt/homebrew/lib/QtQmlModels.framework/Headers -I/opt/homebrew/lib/QtQmlWorkerScript.framework/Headers -I/opt/homebrew/lib/QtQml.framework/Headers -I/opt/homebrew/include -I/opt/homebrew/include/QtQmlIntegration -I/opt/homebrew/lib/QtSerialBus.framework/Headers -I/opt/homebrew/lib/QtNetworkAuth.framework/Headers -I/opt/homebrew/lib/QtNetwork.framework/Headers -I/opt/homebrew/lib/QtSerialPort.framework/Headers -I/opt/homebrew/lib/QtSql.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/System/Library/Frameworks/AGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/System/Library/Frameworks/AGL.framework/Headers -I/opt/homebrew/share/qt/mkspecs/macx-clang -F/opt/homebrew/lib
 QMAKE         = /opt/homebrew/opt/qt/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -40,7 +40,7 @@ DISTNAME      = IPS4MCO1.0.0
 DISTDIR = /Users/temamodder/Documents/Repositories/CarWashTerminals/build-IPS4MCO-Qt_6_9_0_Desktop-Debug/.tmp/IPS4MCO1.0.0
 LINK          = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
 LFLAGS        = -stdlib=libc++ -Wl,-rpath,/Users/temamodder/Documents/Repositories/CarWashTerminals/IPS4MCO/../config_manager/build/lib -headerpad_max_install_names $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -mmacosx-version-min=14.0 -Wl,-rpath,@executable_path/../Frameworks -Wl,-rpath,/opt/homebrew/lib
-LIBS          = $(SUBLIBS) -F/opt/homebrew/lib /Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/lib/libconfigmanager.dylib -framework QtMultimediaWidgets -framework QtWidgets -framework QtQuickControls2 -framework QtQuick -framework QtOpenGL -framework QtMultimedia -framework QtGui -framework AppKit -framework ImageIO -framework Metal -framework QtQmlMeta -framework QtQmlModels -framework QtQmlWorkerScript -framework QtQml -framework QtSerialBus -framework QtNetworkAuth -framework QtNetwork -framework QtSerialPort -framework QtSql -framework QtCore -framework IOKit -framework DiskArbitration -framework UniformTypeIdentifiers -framework AGL -framework OpenGL   
+LIBS          = $(SUBLIBS) -F/opt/homebrew/lib /Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/lib/libconfigmanager.dylib -framework QtMultimediaWidgets -framework QtWidgets -framework QtQuickControls2 -framework QtQuick -framework QtOpenGL -framework QtMultimedia -framework QtSvg -framework QtGui -framework AppKit -framework ImageIO -framework Metal -framework QtQmlMeta -framework QtQmlModels -framework QtQmlWorkerScript -framework QtQml -framework QtSerialBus -framework QtNetworkAuth -framework QtNetwork -framework QtSerialPort -framework QtSql -framework QtCore -framework IOKit -framework DiskArbitration -framework UniformTypeIdentifiers -framework AGL -framework OpenGL   
 AR            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar cq
 RANLIB        = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib -s
 SED           = sed
@@ -61,7 +61,10 @@ SOURCES       = ../IPS4MCO/accountmanager/accountmanager.cpp \
 		../IPS4MCO/interfacecfg/colorconfig.cpp \
 		../IPS4MCO/main.cpp \
 		../IPS4MCO/pilotnt/pilotnt.cpp \
-		../IPS4MCO/db_manager/database_manager.cpp qrc_qml.cpp \
+		../IPS4MCO/db_manager/database_manager.cpp \
+		../qt-qrcode/lib/qtqrcode.cpp \
+		../qt-qrcode/lib/qtqrcodepainter.cpp \
+		../src/yookassa.cpp qrc_qml.cpp \
 		moc_accountmanager.cpp \
 		moc_QtQrCodeQuickItem.cpp \
 		moc_modbuscontroller.cpp \
@@ -71,7 +74,8 @@ SOURCES       = ../IPS4MCO/accountmanager/accountmanager.cpp \
 		moc_colorconfig.cpp \
 		moc_pilotnt.cpp \
 		moc_database_manager.cpp \
-		moc_qnetworkconfigurationmanager.cpp
+		moc_qnetworkconfigurationmanager.cpp \
+		moc_yookassa.cpp
 OBJECTS       = accountmanager.o \
 		QtQrCodeQuickItem.o \
 		modbuscontroller.o \
@@ -82,6 +86,9 @@ OBJECTS       = accountmanager.o \
 		main.o \
 		pilotnt.o \
 		database_manager.o \
+		qtqrcode.o \
+		qtqrcodepainter.o \
+		yookassa.o \
 		qrc_qml.o \
 		moc_accountmanager.o \
 		moc_QtQrCodeQuickItem.o \
@@ -92,7 +99,8 @@ OBJECTS       = accountmanager.o \
 		moc_colorconfig.o \
 		moc_pilotnt.o \
 		moc_database_manager.o \
-		moc_qnetworkconfigurationmanager.o
+		moc_qnetworkconfigurationmanager.o \
+		moc_yookassa.o
 DIST          = ../IPS4MCO/imports/IPS4MCO/Constants.qml \
 		../IPS4MCO/imports/IPS4MCO/qmldir \
 		../IPS4MCO/main.qml \
@@ -479,7 +487,8 @@ DIST          = ../IPS4MCO/imports/IPS4MCO/Constants.qml \
 		../IPS4MCO/interfacecfg/colorconfig.h \
 		../IPS4MCO/pilotnt/pilotnt.h \
 		../IPS4MCO/db_manager/database_manager.h \
-		../IPS4MCO/qnetworkconfigurationmanager.h ../IPS4MCO/accountmanager/accountmanager.cpp \
+		../IPS4MCO/qnetworkconfigurationmanager.h \
+		../include/yookassa.h ../IPS4MCO/accountmanager/accountmanager.cpp \
 		../qt-qrcode/quickitem/QtQrCodeQuickItem.cpp \
 		../IPS4MCO/controller/modbuscontroller.cpp \
 		../IPS4MCO/engine/configmanager.cpp \
@@ -488,7 +497,10 @@ DIST          = ../IPS4MCO/imports/IPS4MCO/Constants.qml \
 		../IPS4MCO/interfacecfg/colorconfig.cpp \
 		../IPS4MCO/main.cpp \
 		../IPS4MCO/pilotnt/pilotnt.cpp \
-		../IPS4MCO/db_manager/database_manager.cpp
+		../IPS4MCO/db_manager/database_manager.cpp \
+		../qt-qrcode/lib/qtqrcode.cpp \
+		../qt-qrcode/lib/qtqrcodepainter.cpp \
+		../src/yookassa.cpp
 QMAKE_TARGET  = IPS4MCO
 DESTDIR       = 
 TARGET        = IPS4MCO.app/Contents/MacOS/IPS4MCO
@@ -892,6 +904,7 @@ Makefile: ../IPS4MCO/IPS4MCO.pro /opt/homebrew/share/qt/mkspecs/macx-clang/qmake
 		/opt/homebrew/lib/QtQuick.framework/Resources/QtQuick.prl \
 		/opt/homebrew/lib/QtOpenGL.framework/Resources/QtOpenGL.prl \
 		/opt/homebrew/lib/QtMultimedia.framework/Resources/QtMultimedia.prl \
+		/opt/homebrew/lib/QtSvg.framework/Resources/QtSvg.prl \
 		/opt/homebrew/lib/QtGui.framework/Resources/QtGui.prl \
 		/opt/homebrew/lib/QtQmlMeta.framework/Resources/QtQmlMeta.prl \
 		/opt/homebrew/lib/QtQmlModels.framework/Resources/QtQmlModels.prl \
@@ -1283,6 +1296,7 @@ Makefile: ../IPS4MCO/IPS4MCO.pro /opt/homebrew/share/qt/mkspecs/macx-clang/qmake
 /opt/homebrew/lib/QtQuick.framework/Resources/QtQuick.prl:
 /opt/homebrew/lib/QtOpenGL.framework/Resources/QtOpenGL.prl:
 /opt/homebrew/lib/QtMultimedia.framework/Resources/QtMultimedia.prl:
+/opt/homebrew/lib/QtSvg.framework/Resources/QtSvg.prl:
 /opt/homebrew/lib/QtGui.framework/Resources/QtGui.prl:
 /opt/homebrew/lib/QtQmlMeta.framework/Resources/QtQmlMeta.prl:
 /opt/homebrew/lib/QtQmlModels.framework/Resources/QtQmlModels.prl:
@@ -1320,8 +1334,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../IPS4MCO/qml.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /opt/homebrew/share/qt/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../IPS4MCO/accountmanager/accountmanager.h ../IPS4MCO/accountmanager/accountmanager.cpp ../qt-qrcode/quickitem/QtQrCodeQuickItem.hpp ../IPS4MCO/controller/modbuscontroller.h ../IPS4MCO/engine/configmanager.h ../IPS4MCO/engine/engine.h ../IPS4MCO/engine/logmanager.h ../IPS4MCO/errors.h ../IPS4MCO/interfacecfg/colorconfig.h ../IPS4MCO/pilotnt/pilotnt.h ../IPS4MCO/db_manager/database_manager.h ../IPS4MCO/qnetworkconfigurationmanager.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../IPS4MCO/accountmanager/accountmanager.cpp ../qt-qrcode/quickitem/QtQrCodeQuickItem.cpp ../IPS4MCO/controller/modbuscontroller.cpp ../IPS4MCO/engine/configmanager.cpp ../IPS4MCO/engine/engine.cpp ../IPS4MCO/engine/logmanager.cpp ../IPS4MCO/interfacecfg/colorconfig.cpp ../IPS4MCO/main.cpp ../IPS4MCO/pilotnt/pilotnt.cpp ../IPS4MCO/db_manager/database_manager.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../IPS4MCO/accountmanager/accountmanager.h ../IPS4MCO/accountmanager/accountmanager.cpp ../qt-qrcode/quickitem/QtQrCodeQuickItem.hpp ../IPS4MCO/controller/modbuscontroller.h ../IPS4MCO/engine/configmanager.h ../IPS4MCO/engine/engine.h ../IPS4MCO/engine/logmanager.h ../IPS4MCO/errors.h ../IPS4MCO/interfacecfg/colorconfig.h ../IPS4MCO/pilotnt/pilotnt.h ../IPS4MCO/db_manager/database_manager.h ../IPS4MCO/qnetworkconfigurationmanager.h ../include/yookassa.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../IPS4MCO/accountmanager/accountmanager.cpp ../qt-qrcode/quickitem/QtQrCodeQuickItem.cpp ../IPS4MCO/controller/modbuscontroller.cpp ../IPS4MCO/engine/configmanager.cpp ../IPS4MCO/engine/engine.cpp ../IPS4MCO/engine/logmanager.cpp ../IPS4MCO/interfacecfg/colorconfig.cpp ../IPS4MCO/main.cpp ../IPS4MCO/pilotnt/pilotnt.cpp ../IPS4MCO/db_manager/database_manager.cpp ../qt-qrcode/lib/qtqrcode.cpp ../qt-qrcode/lib/qtqrcodepainter.cpp ../src/yookassa.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -1443,9 +1457,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /opt/homebrew/share/qt/mkspecs/features/data/dummy.cpp
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -pipe -stdlib=libc++ -g -std=gnu++1z $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -mmacosx-version-min=14.0 -Wall -Wextra -dM -E -o moc_predefs.h /opt/homebrew/share/qt/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_accountmanager.cpp moc_QtQrCodeQuickItem.cpp moc_modbuscontroller.cpp moc_configmanager.cpp moc_engine.cpp moc_logmanager.cpp moc_colorconfig.cpp moc_pilotnt.cpp moc_database_manager.cpp moc_qnetworkconfigurationmanager.cpp
+compiler_moc_header_make_all: moc_accountmanager.cpp moc_QtQrCodeQuickItem.cpp moc_modbuscontroller.cpp moc_configmanager.cpp moc_engine.cpp moc_logmanager.cpp moc_colorconfig.cpp moc_pilotnt.cpp moc_database_manager.cpp moc_qnetworkconfigurationmanager.cpp moc_yookassa.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_accountmanager.cpp moc_QtQrCodeQuickItem.cpp moc_modbuscontroller.cpp moc_configmanager.cpp moc_engine.cpp moc_logmanager.cpp moc_colorconfig.cpp moc_pilotnt.cpp moc_database_manager.cpp moc_qnetworkconfigurationmanager.cpp
+	-$(DEL_FILE) moc_accountmanager.cpp moc_QtQrCodeQuickItem.cpp moc_modbuscontroller.cpp moc_configmanager.cpp moc_engine.cpp moc_logmanager.cpp moc_colorconfig.cpp moc_pilotnt.cpp moc_database_manager.cpp moc_qnetworkconfigurationmanager.cpp moc_yookassa.cpp
 moc_accountmanager.cpp: ../IPS4MCO/accountmanager/accountmanager.h \
 		/opt/homebrew/lib/QtCore.framework/Headers/QObject \
 		/opt/homebrew/lib/QtCore.framework/Headers/qobject.h \
@@ -1598,9 +1612,13 @@ moc_accountmanager.cpp: ../IPS4MCO/accountmanager/accountmanager.h \
 		/opt/homebrew/include/QtNetwork/qhostaddress.h \
 		/opt/homebrew/include/QtNetwork/qabstractsocket.h \
 		/opt/homebrew/include/QtCore/qiodevice.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QVariantList \
+		/opt/homebrew/lib/QtCore.framework/Headers/qvariantlist.h \
+		/opt/homebrew/include/QtCore/QList \
+		/opt/homebrew/include/QtCore/QVariant \
 		moc_predefs.h \
 		/opt/homebrew/share/qt/libexec/moc
-	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include /Users/temamodder/Documents/Repositories/CarWashTerminals/build-IPS4MCO-Qt_6_9_0_Desktop-Debug/moc_predefs.h -I/opt/homebrew/share/qt/mkspecs/macx-clang -I/Users/temamodder/Documents/Repositories/CarWashTerminals/IPS4MCO -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/quickitem -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/lib -I/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/include -I/opt/homebrew/lib/QtMultimediaWidgets.framework/Headers -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtQuickControls2.framework/Headers -I/opt/homebrew/lib/QtQuick.framework/Headers -I/opt/homebrew/lib/QtOpenGL.framework/Headers -I/opt/homebrew/lib/QtMultimedia.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtQmlMeta.framework/Headers -I/opt/homebrew/lib/QtQmlModels.framework/Headers -I/opt/homebrew/lib/QtQmlWorkerScript.framework/Headers -I/opt/homebrew/lib/QtQml.framework/Headers -I/opt/homebrew/include -I/opt/homebrew/include/QtQmlIntegration -I/opt/homebrew/lib/QtSerialBus.framework/Headers -I/opt/homebrew/lib/QtNetworkAuth.framework/Headers -I/opt/homebrew/lib/QtNetwork.framework/Headers -I/opt/homebrew/lib/QtSerialPort.framework/Headers -I/opt/homebrew/lib/QtSql.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/opt/homebrew/lib ../IPS4MCO/accountmanager/accountmanager.h -o moc_accountmanager.cpp
+	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include /Users/temamodder/Documents/Repositories/CarWashTerminals/build-IPS4MCO-Qt_6_9_0_Desktop-Debug/moc_predefs.h -I/opt/homebrew/share/qt/mkspecs/macx-clang -I/Users/temamodder/Documents/Repositories/CarWashTerminals/IPS4MCO -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/quickitem -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/lib -I/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/include -I/opt/homebrew/lib/QtMultimediaWidgets.framework/Headers -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtQuickControls2.framework/Headers -I/opt/homebrew/lib/QtQuick.framework/Headers -I/opt/homebrew/lib/QtOpenGL.framework/Headers -I/opt/homebrew/lib/QtMultimedia.framework/Headers -I/opt/homebrew/lib/QtSvg.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtQmlMeta.framework/Headers -I/opt/homebrew/lib/QtQmlModels.framework/Headers -I/opt/homebrew/lib/QtQmlWorkerScript.framework/Headers -I/opt/homebrew/lib/QtQml.framework/Headers -I/opt/homebrew/include -I/opt/homebrew/include/QtQmlIntegration -I/opt/homebrew/lib/QtSerialBus.framework/Headers -I/opt/homebrew/lib/QtNetworkAuth.framework/Headers -I/opt/homebrew/lib/QtNetwork.framework/Headers -I/opt/homebrew/lib/QtSerialPort.framework/Headers -I/opt/homebrew/lib/QtSql.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/opt/homebrew/lib ../IPS4MCO/accountmanager/accountmanager.h -o moc_accountmanager.cpp
 
 moc_QtQrCodeQuickItem.cpp: ../qt-qrcode/quickitem/QtQrCodeQuickItem.hpp \
 		/opt/homebrew/lib/QtGui.framework/Headers/QColor \
@@ -1843,7 +1861,7 @@ moc_QtQrCodeQuickItem.cpp: ../qt-qrcode/quickitem/QtQrCodeQuickItem.hpp \
 		/opt/homebrew/include/QtGui/qfontmetrics.h \
 		moc_predefs.h \
 		/opt/homebrew/share/qt/libexec/moc
-	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include /Users/temamodder/Documents/Repositories/CarWashTerminals/build-IPS4MCO-Qt_6_9_0_Desktop-Debug/moc_predefs.h -I/opt/homebrew/share/qt/mkspecs/macx-clang -I/Users/temamodder/Documents/Repositories/CarWashTerminals/IPS4MCO -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/quickitem -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/lib -I/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/include -I/opt/homebrew/lib/QtMultimediaWidgets.framework/Headers -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtQuickControls2.framework/Headers -I/opt/homebrew/lib/QtQuick.framework/Headers -I/opt/homebrew/lib/QtOpenGL.framework/Headers -I/opt/homebrew/lib/QtMultimedia.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtQmlMeta.framework/Headers -I/opt/homebrew/lib/QtQmlModels.framework/Headers -I/opt/homebrew/lib/QtQmlWorkerScript.framework/Headers -I/opt/homebrew/lib/QtQml.framework/Headers -I/opt/homebrew/include -I/opt/homebrew/include/QtQmlIntegration -I/opt/homebrew/lib/QtSerialBus.framework/Headers -I/opt/homebrew/lib/QtNetworkAuth.framework/Headers -I/opt/homebrew/lib/QtNetwork.framework/Headers -I/opt/homebrew/lib/QtSerialPort.framework/Headers -I/opt/homebrew/lib/QtSql.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/opt/homebrew/lib ../qt-qrcode/quickitem/QtQrCodeQuickItem.hpp -o moc_QtQrCodeQuickItem.cpp
+	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include /Users/temamodder/Documents/Repositories/CarWashTerminals/build-IPS4MCO-Qt_6_9_0_Desktop-Debug/moc_predefs.h -I/opt/homebrew/share/qt/mkspecs/macx-clang -I/Users/temamodder/Documents/Repositories/CarWashTerminals/IPS4MCO -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/quickitem -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/lib -I/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/include -I/opt/homebrew/lib/QtMultimediaWidgets.framework/Headers -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtQuickControls2.framework/Headers -I/opt/homebrew/lib/QtQuick.framework/Headers -I/opt/homebrew/lib/QtOpenGL.framework/Headers -I/opt/homebrew/lib/QtMultimedia.framework/Headers -I/opt/homebrew/lib/QtSvg.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtQmlMeta.framework/Headers -I/opt/homebrew/lib/QtQmlModels.framework/Headers -I/opt/homebrew/lib/QtQmlWorkerScript.framework/Headers -I/opt/homebrew/lib/QtQml.framework/Headers -I/opt/homebrew/include -I/opt/homebrew/include/QtQmlIntegration -I/opt/homebrew/lib/QtSerialBus.framework/Headers -I/opt/homebrew/lib/QtNetworkAuth.framework/Headers -I/opt/homebrew/lib/QtNetwork.framework/Headers -I/opt/homebrew/lib/QtSerialPort.framework/Headers -I/opt/homebrew/lib/QtSql.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/opt/homebrew/lib ../qt-qrcode/quickitem/QtQrCodeQuickItem.hpp -o moc_QtQrCodeQuickItem.cpp
 
 moc_modbuscontroller.cpp: ../IPS4MCO/controller/modbuscontroller.h \
 		/opt/homebrew/lib/QtCore.framework/Headers/QObject \
@@ -1999,7 +2017,7 @@ moc_modbuscontroller.cpp: ../IPS4MCO/controller/modbuscontroller.h \
 		/opt/homebrew/lib/QtCore.framework/Headers/qdebug.h \
 		moc_predefs.h \
 		/opt/homebrew/share/qt/libexec/moc
-	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include /Users/temamodder/Documents/Repositories/CarWashTerminals/build-IPS4MCO-Qt_6_9_0_Desktop-Debug/moc_predefs.h -I/opt/homebrew/share/qt/mkspecs/macx-clang -I/Users/temamodder/Documents/Repositories/CarWashTerminals/IPS4MCO -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/quickitem -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/lib -I/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/include -I/opt/homebrew/lib/QtMultimediaWidgets.framework/Headers -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtQuickControls2.framework/Headers -I/opt/homebrew/lib/QtQuick.framework/Headers -I/opt/homebrew/lib/QtOpenGL.framework/Headers -I/opt/homebrew/lib/QtMultimedia.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtQmlMeta.framework/Headers -I/opt/homebrew/lib/QtQmlModels.framework/Headers -I/opt/homebrew/lib/QtQmlWorkerScript.framework/Headers -I/opt/homebrew/lib/QtQml.framework/Headers -I/opt/homebrew/include -I/opt/homebrew/include/QtQmlIntegration -I/opt/homebrew/lib/QtSerialBus.framework/Headers -I/opt/homebrew/lib/QtNetworkAuth.framework/Headers -I/opt/homebrew/lib/QtNetwork.framework/Headers -I/opt/homebrew/lib/QtSerialPort.framework/Headers -I/opt/homebrew/lib/QtSql.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/opt/homebrew/lib ../IPS4MCO/controller/modbuscontroller.h -o moc_modbuscontroller.cpp
+	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include /Users/temamodder/Documents/Repositories/CarWashTerminals/build-IPS4MCO-Qt_6_9_0_Desktop-Debug/moc_predefs.h -I/opt/homebrew/share/qt/mkspecs/macx-clang -I/Users/temamodder/Documents/Repositories/CarWashTerminals/IPS4MCO -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/quickitem -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/lib -I/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/include -I/opt/homebrew/lib/QtMultimediaWidgets.framework/Headers -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtQuickControls2.framework/Headers -I/opt/homebrew/lib/QtQuick.framework/Headers -I/opt/homebrew/lib/QtOpenGL.framework/Headers -I/opt/homebrew/lib/QtMultimedia.framework/Headers -I/opt/homebrew/lib/QtSvg.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtQmlMeta.framework/Headers -I/opt/homebrew/lib/QtQmlModels.framework/Headers -I/opt/homebrew/lib/QtQmlWorkerScript.framework/Headers -I/opt/homebrew/lib/QtQml.framework/Headers -I/opt/homebrew/include -I/opt/homebrew/include/QtQmlIntegration -I/opt/homebrew/lib/QtSerialBus.framework/Headers -I/opt/homebrew/lib/QtNetworkAuth.framework/Headers -I/opt/homebrew/lib/QtNetwork.framework/Headers -I/opt/homebrew/lib/QtSerialPort.framework/Headers -I/opt/homebrew/lib/QtSql.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/opt/homebrew/lib ../IPS4MCO/controller/modbuscontroller.h -o moc_modbuscontroller.cpp
 
 moc_configmanager.cpp: ../IPS4MCO/engine/configmanager.h \
 		/opt/homebrew/lib/QtCore.framework/Headers/QObject \
@@ -2156,7 +2174,7 @@ moc_configmanager.cpp: ../IPS4MCO/engine/configmanager.h \
 		../IPS4MCO/errors.h \
 		moc_predefs.h \
 		/opt/homebrew/share/qt/libexec/moc
-	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include /Users/temamodder/Documents/Repositories/CarWashTerminals/build-IPS4MCO-Qt_6_9_0_Desktop-Debug/moc_predefs.h -I/opt/homebrew/share/qt/mkspecs/macx-clang -I/Users/temamodder/Documents/Repositories/CarWashTerminals/IPS4MCO -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/quickitem -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/lib -I/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/include -I/opt/homebrew/lib/QtMultimediaWidgets.framework/Headers -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtQuickControls2.framework/Headers -I/opt/homebrew/lib/QtQuick.framework/Headers -I/opt/homebrew/lib/QtOpenGL.framework/Headers -I/opt/homebrew/lib/QtMultimedia.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtQmlMeta.framework/Headers -I/opt/homebrew/lib/QtQmlModels.framework/Headers -I/opt/homebrew/lib/QtQmlWorkerScript.framework/Headers -I/opt/homebrew/lib/QtQml.framework/Headers -I/opt/homebrew/include -I/opt/homebrew/include/QtQmlIntegration -I/opt/homebrew/lib/QtSerialBus.framework/Headers -I/opt/homebrew/lib/QtNetworkAuth.framework/Headers -I/opt/homebrew/lib/QtNetwork.framework/Headers -I/opt/homebrew/lib/QtSerialPort.framework/Headers -I/opt/homebrew/lib/QtSql.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/opt/homebrew/lib ../IPS4MCO/engine/configmanager.h -o moc_configmanager.cpp
+	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include /Users/temamodder/Documents/Repositories/CarWashTerminals/build-IPS4MCO-Qt_6_9_0_Desktop-Debug/moc_predefs.h -I/opt/homebrew/share/qt/mkspecs/macx-clang -I/Users/temamodder/Documents/Repositories/CarWashTerminals/IPS4MCO -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/quickitem -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/lib -I/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/include -I/opt/homebrew/lib/QtMultimediaWidgets.framework/Headers -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtQuickControls2.framework/Headers -I/opt/homebrew/lib/QtQuick.framework/Headers -I/opt/homebrew/lib/QtOpenGL.framework/Headers -I/opt/homebrew/lib/QtMultimedia.framework/Headers -I/opt/homebrew/lib/QtSvg.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtQmlMeta.framework/Headers -I/opt/homebrew/lib/QtQmlModels.framework/Headers -I/opt/homebrew/lib/QtQmlWorkerScript.framework/Headers -I/opt/homebrew/lib/QtQml.framework/Headers -I/opt/homebrew/include -I/opt/homebrew/include/QtQmlIntegration -I/opt/homebrew/lib/QtSerialBus.framework/Headers -I/opt/homebrew/lib/QtNetworkAuth.framework/Headers -I/opt/homebrew/lib/QtNetwork.framework/Headers -I/opt/homebrew/lib/QtSerialPort.framework/Headers -I/opt/homebrew/lib/QtSql.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/opt/homebrew/lib ../IPS4MCO/engine/configmanager.h -o moc_configmanager.cpp
 
 moc_engine.cpp: ../IPS4MCO/engine/engine.h \
 		/opt/homebrew/lib/QtCore.framework/Headers/QObject \
@@ -2365,9 +2383,13 @@ moc_engine.cpp: ../IPS4MCO/engine/engine.h \
 		/opt/homebrew/include/QtNetwork/qtnetworkexports.h \
 		/opt/homebrew/include/QtNetwork/qhostaddress.h \
 		/opt/homebrew/include/QtNetwork/qabstractsocket.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QVariantList \
+		/opt/homebrew/lib/QtCore.framework/Headers/qvariantlist.h \
+		/opt/homebrew/include/QtCore/QList \
+		/opt/homebrew/include/QtCore/QVariant \
 		moc_predefs.h \
 		/opt/homebrew/share/qt/libexec/moc
-	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include /Users/temamodder/Documents/Repositories/CarWashTerminals/build-IPS4MCO-Qt_6_9_0_Desktop-Debug/moc_predefs.h -I/opt/homebrew/share/qt/mkspecs/macx-clang -I/Users/temamodder/Documents/Repositories/CarWashTerminals/IPS4MCO -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/quickitem -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/lib -I/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/include -I/opt/homebrew/lib/QtMultimediaWidgets.framework/Headers -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtQuickControls2.framework/Headers -I/opt/homebrew/lib/QtQuick.framework/Headers -I/opt/homebrew/lib/QtOpenGL.framework/Headers -I/opt/homebrew/lib/QtMultimedia.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtQmlMeta.framework/Headers -I/opt/homebrew/lib/QtQmlModels.framework/Headers -I/opt/homebrew/lib/QtQmlWorkerScript.framework/Headers -I/opt/homebrew/lib/QtQml.framework/Headers -I/opt/homebrew/include -I/opt/homebrew/include/QtQmlIntegration -I/opt/homebrew/lib/QtSerialBus.framework/Headers -I/opt/homebrew/lib/QtNetworkAuth.framework/Headers -I/opt/homebrew/lib/QtNetwork.framework/Headers -I/opt/homebrew/lib/QtSerialPort.framework/Headers -I/opt/homebrew/lib/QtSql.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/opt/homebrew/lib ../IPS4MCO/engine/engine.h -o moc_engine.cpp
+	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include /Users/temamodder/Documents/Repositories/CarWashTerminals/build-IPS4MCO-Qt_6_9_0_Desktop-Debug/moc_predefs.h -I/opt/homebrew/share/qt/mkspecs/macx-clang -I/Users/temamodder/Documents/Repositories/CarWashTerminals/IPS4MCO -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/quickitem -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/lib -I/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/include -I/opt/homebrew/lib/QtMultimediaWidgets.framework/Headers -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtQuickControls2.framework/Headers -I/opt/homebrew/lib/QtQuick.framework/Headers -I/opt/homebrew/lib/QtOpenGL.framework/Headers -I/opt/homebrew/lib/QtMultimedia.framework/Headers -I/opt/homebrew/lib/QtSvg.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtQmlMeta.framework/Headers -I/opt/homebrew/lib/QtQmlModels.framework/Headers -I/opt/homebrew/lib/QtQmlWorkerScript.framework/Headers -I/opt/homebrew/lib/QtQml.framework/Headers -I/opt/homebrew/include -I/opt/homebrew/include/QtQmlIntegration -I/opt/homebrew/lib/QtSerialBus.framework/Headers -I/opt/homebrew/lib/QtNetworkAuth.framework/Headers -I/opt/homebrew/lib/QtNetwork.framework/Headers -I/opt/homebrew/lib/QtSerialPort.framework/Headers -I/opt/homebrew/lib/QtSql.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/opt/homebrew/lib ../IPS4MCO/engine/engine.h -o moc_engine.cpp
 
 moc_logmanager.cpp: ../IPS4MCO/engine/logmanager.h \
 		/opt/homebrew/lib/QtCore.framework/Headers/QObject \
@@ -2512,7 +2534,7 @@ moc_logmanager.cpp: ../IPS4MCO/engine/logmanager.h \
 		../IPS4MCO/errors.h \
 		moc_predefs.h \
 		/opt/homebrew/share/qt/libexec/moc
-	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include /Users/temamodder/Documents/Repositories/CarWashTerminals/build-IPS4MCO-Qt_6_9_0_Desktop-Debug/moc_predefs.h -I/opt/homebrew/share/qt/mkspecs/macx-clang -I/Users/temamodder/Documents/Repositories/CarWashTerminals/IPS4MCO -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/quickitem -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/lib -I/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/include -I/opt/homebrew/lib/QtMultimediaWidgets.framework/Headers -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtQuickControls2.framework/Headers -I/opt/homebrew/lib/QtQuick.framework/Headers -I/opt/homebrew/lib/QtOpenGL.framework/Headers -I/opt/homebrew/lib/QtMultimedia.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtQmlMeta.framework/Headers -I/opt/homebrew/lib/QtQmlModels.framework/Headers -I/opt/homebrew/lib/QtQmlWorkerScript.framework/Headers -I/opt/homebrew/lib/QtQml.framework/Headers -I/opt/homebrew/include -I/opt/homebrew/include/QtQmlIntegration -I/opt/homebrew/lib/QtSerialBus.framework/Headers -I/opt/homebrew/lib/QtNetworkAuth.framework/Headers -I/opt/homebrew/lib/QtNetwork.framework/Headers -I/opt/homebrew/lib/QtSerialPort.framework/Headers -I/opt/homebrew/lib/QtSql.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/opt/homebrew/lib ../IPS4MCO/engine/logmanager.h -o moc_logmanager.cpp
+	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include /Users/temamodder/Documents/Repositories/CarWashTerminals/build-IPS4MCO-Qt_6_9_0_Desktop-Debug/moc_predefs.h -I/opt/homebrew/share/qt/mkspecs/macx-clang -I/Users/temamodder/Documents/Repositories/CarWashTerminals/IPS4MCO -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/quickitem -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/lib -I/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/include -I/opt/homebrew/lib/QtMultimediaWidgets.framework/Headers -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtQuickControls2.framework/Headers -I/opt/homebrew/lib/QtQuick.framework/Headers -I/opt/homebrew/lib/QtOpenGL.framework/Headers -I/opt/homebrew/lib/QtMultimedia.framework/Headers -I/opt/homebrew/lib/QtSvg.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtQmlMeta.framework/Headers -I/opt/homebrew/lib/QtQmlModels.framework/Headers -I/opt/homebrew/lib/QtQmlWorkerScript.framework/Headers -I/opt/homebrew/lib/QtQml.framework/Headers -I/opt/homebrew/include -I/opt/homebrew/include/QtQmlIntegration -I/opt/homebrew/lib/QtSerialBus.framework/Headers -I/opt/homebrew/lib/QtNetworkAuth.framework/Headers -I/opt/homebrew/lib/QtNetwork.framework/Headers -I/opt/homebrew/lib/QtSerialPort.framework/Headers -I/opt/homebrew/lib/QtSql.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/opt/homebrew/lib ../IPS4MCO/engine/logmanager.h -o moc_logmanager.cpp
 
 moc_colorconfig.cpp: ../IPS4MCO/interfacecfg/colorconfig.h \
 		/opt/homebrew/lib/QtCore.framework/Headers/QObject \
@@ -2674,7 +2696,7 @@ moc_colorconfig.cpp: ../IPS4MCO/interfacecfg/colorconfig.h \
 		../IPS4MCO/errors.h \
 		moc_predefs.h \
 		/opt/homebrew/share/qt/libexec/moc
-	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include /Users/temamodder/Documents/Repositories/CarWashTerminals/build-IPS4MCO-Qt_6_9_0_Desktop-Debug/moc_predefs.h -I/opt/homebrew/share/qt/mkspecs/macx-clang -I/Users/temamodder/Documents/Repositories/CarWashTerminals/IPS4MCO -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/quickitem -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/lib -I/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/include -I/opt/homebrew/lib/QtMultimediaWidgets.framework/Headers -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtQuickControls2.framework/Headers -I/opt/homebrew/lib/QtQuick.framework/Headers -I/opt/homebrew/lib/QtOpenGL.framework/Headers -I/opt/homebrew/lib/QtMultimedia.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtQmlMeta.framework/Headers -I/opt/homebrew/lib/QtQmlModels.framework/Headers -I/opt/homebrew/lib/QtQmlWorkerScript.framework/Headers -I/opt/homebrew/lib/QtQml.framework/Headers -I/opt/homebrew/include -I/opt/homebrew/include/QtQmlIntegration -I/opt/homebrew/lib/QtSerialBus.framework/Headers -I/opt/homebrew/lib/QtNetworkAuth.framework/Headers -I/opt/homebrew/lib/QtNetwork.framework/Headers -I/opt/homebrew/lib/QtSerialPort.framework/Headers -I/opt/homebrew/lib/QtSql.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/opt/homebrew/lib ../IPS4MCO/interfacecfg/colorconfig.h -o moc_colorconfig.cpp
+	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include /Users/temamodder/Documents/Repositories/CarWashTerminals/build-IPS4MCO-Qt_6_9_0_Desktop-Debug/moc_predefs.h -I/opt/homebrew/share/qt/mkspecs/macx-clang -I/Users/temamodder/Documents/Repositories/CarWashTerminals/IPS4MCO -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/quickitem -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/lib -I/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/include -I/opt/homebrew/lib/QtMultimediaWidgets.framework/Headers -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtQuickControls2.framework/Headers -I/opt/homebrew/lib/QtQuick.framework/Headers -I/opt/homebrew/lib/QtOpenGL.framework/Headers -I/opt/homebrew/lib/QtMultimedia.framework/Headers -I/opt/homebrew/lib/QtSvg.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtQmlMeta.framework/Headers -I/opt/homebrew/lib/QtQmlModels.framework/Headers -I/opt/homebrew/lib/QtQmlWorkerScript.framework/Headers -I/opt/homebrew/lib/QtQml.framework/Headers -I/opt/homebrew/include -I/opt/homebrew/include/QtQmlIntegration -I/opt/homebrew/lib/QtSerialBus.framework/Headers -I/opt/homebrew/lib/QtNetworkAuth.framework/Headers -I/opt/homebrew/lib/QtNetwork.framework/Headers -I/opt/homebrew/lib/QtSerialPort.framework/Headers -I/opt/homebrew/lib/QtSql.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/opt/homebrew/lib ../IPS4MCO/interfacecfg/colorconfig.h -o moc_colorconfig.cpp
 
 moc_pilotnt.cpp: ../IPS4MCO/pilotnt/pilotnt.h \
 		/opt/homebrew/lib/QtCore.framework/Headers/QObject \
@@ -2814,7 +2836,7 @@ moc_pilotnt.cpp: ../IPS4MCO/pilotnt/pilotnt.h \
 		/opt/homebrew/include/QtCore/qvarlengtharray.h \
 		moc_predefs.h \
 		/opt/homebrew/share/qt/libexec/moc
-	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include /Users/temamodder/Documents/Repositories/CarWashTerminals/build-IPS4MCO-Qt_6_9_0_Desktop-Debug/moc_predefs.h -I/opt/homebrew/share/qt/mkspecs/macx-clang -I/Users/temamodder/Documents/Repositories/CarWashTerminals/IPS4MCO -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/quickitem -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/lib -I/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/include -I/opt/homebrew/lib/QtMultimediaWidgets.framework/Headers -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtQuickControls2.framework/Headers -I/opt/homebrew/lib/QtQuick.framework/Headers -I/opt/homebrew/lib/QtOpenGL.framework/Headers -I/opt/homebrew/lib/QtMultimedia.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtQmlMeta.framework/Headers -I/opt/homebrew/lib/QtQmlModels.framework/Headers -I/opt/homebrew/lib/QtQmlWorkerScript.framework/Headers -I/opt/homebrew/lib/QtQml.framework/Headers -I/opt/homebrew/include -I/opt/homebrew/include/QtQmlIntegration -I/opt/homebrew/lib/QtSerialBus.framework/Headers -I/opt/homebrew/lib/QtNetworkAuth.framework/Headers -I/opt/homebrew/lib/QtNetwork.framework/Headers -I/opt/homebrew/lib/QtSerialPort.framework/Headers -I/opt/homebrew/lib/QtSql.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/opt/homebrew/lib ../IPS4MCO/pilotnt/pilotnt.h -o moc_pilotnt.cpp
+	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include /Users/temamodder/Documents/Repositories/CarWashTerminals/build-IPS4MCO-Qt_6_9_0_Desktop-Debug/moc_predefs.h -I/opt/homebrew/share/qt/mkspecs/macx-clang -I/Users/temamodder/Documents/Repositories/CarWashTerminals/IPS4MCO -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/quickitem -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/lib -I/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/include -I/opt/homebrew/lib/QtMultimediaWidgets.framework/Headers -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtQuickControls2.framework/Headers -I/opt/homebrew/lib/QtQuick.framework/Headers -I/opt/homebrew/lib/QtOpenGL.framework/Headers -I/opt/homebrew/lib/QtMultimedia.framework/Headers -I/opt/homebrew/lib/QtSvg.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtQmlMeta.framework/Headers -I/opt/homebrew/lib/QtQmlModels.framework/Headers -I/opt/homebrew/lib/QtQmlWorkerScript.framework/Headers -I/opt/homebrew/lib/QtQml.framework/Headers -I/opt/homebrew/include -I/opt/homebrew/include/QtQmlIntegration -I/opt/homebrew/lib/QtSerialBus.framework/Headers -I/opt/homebrew/lib/QtNetworkAuth.framework/Headers -I/opt/homebrew/lib/QtNetwork.framework/Headers -I/opt/homebrew/lib/QtSerialPort.framework/Headers -I/opt/homebrew/lib/QtSql.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/opt/homebrew/lib ../IPS4MCO/pilotnt/pilotnt.h -o moc_pilotnt.cpp
 
 moc_database_manager.cpp: ../IPS4MCO/db_manager/database_manager.h \
 		/opt/homebrew/lib/QtCore.framework/Headers/QObject \
@@ -2966,7 +2988,7 @@ moc_database_manager.cpp: ../IPS4MCO/db_manager/database_manager.h \
 		/opt/homebrew/lib/QtCore.framework/Headers/qtimer.h \
 		moc_predefs.h \
 		/opt/homebrew/share/qt/libexec/moc
-	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include /Users/temamodder/Documents/Repositories/CarWashTerminals/build-IPS4MCO-Qt_6_9_0_Desktop-Debug/moc_predefs.h -I/opt/homebrew/share/qt/mkspecs/macx-clang -I/Users/temamodder/Documents/Repositories/CarWashTerminals/IPS4MCO -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/quickitem -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/lib -I/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/include -I/opt/homebrew/lib/QtMultimediaWidgets.framework/Headers -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtQuickControls2.framework/Headers -I/opt/homebrew/lib/QtQuick.framework/Headers -I/opt/homebrew/lib/QtOpenGL.framework/Headers -I/opt/homebrew/lib/QtMultimedia.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtQmlMeta.framework/Headers -I/opt/homebrew/lib/QtQmlModels.framework/Headers -I/opt/homebrew/lib/QtQmlWorkerScript.framework/Headers -I/opt/homebrew/lib/QtQml.framework/Headers -I/opt/homebrew/include -I/opt/homebrew/include/QtQmlIntegration -I/opt/homebrew/lib/QtSerialBus.framework/Headers -I/opt/homebrew/lib/QtNetworkAuth.framework/Headers -I/opt/homebrew/lib/QtNetwork.framework/Headers -I/opt/homebrew/lib/QtSerialPort.framework/Headers -I/opt/homebrew/lib/QtSql.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/opt/homebrew/lib ../IPS4MCO/db_manager/database_manager.h -o moc_database_manager.cpp
+	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include /Users/temamodder/Documents/Repositories/CarWashTerminals/build-IPS4MCO-Qt_6_9_0_Desktop-Debug/moc_predefs.h -I/opt/homebrew/share/qt/mkspecs/macx-clang -I/Users/temamodder/Documents/Repositories/CarWashTerminals/IPS4MCO -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/quickitem -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/lib -I/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/include -I/opt/homebrew/lib/QtMultimediaWidgets.framework/Headers -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtQuickControls2.framework/Headers -I/opt/homebrew/lib/QtQuick.framework/Headers -I/opt/homebrew/lib/QtOpenGL.framework/Headers -I/opt/homebrew/lib/QtMultimedia.framework/Headers -I/opt/homebrew/lib/QtSvg.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtQmlMeta.framework/Headers -I/opt/homebrew/lib/QtQmlModels.framework/Headers -I/opt/homebrew/lib/QtQmlWorkerScript.framework/Headers -I/opt/homebrew/lib/QtQml.framework/Headers -I/opt/homebrew/include -I/opt/homebrew/include/QtQmlIntegration -I/opt/homebrew/lib/QtSerialBus.framework/Headers -I/opt/homebrew/lib/QtNetworkAuth.framework/Headers -I/opt/homebrew/lib/QtNetwork.framework/Headers -I/opt/homebrew/lib/QtSerialPort.framework/Headers -I/opt/homebrew/lib/QtSql.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/opt/homebrew/lib ../IPS4MCO/db_manager/database_manager.h -o moc_database_manager.cpp
 
 moc_qnetworkconfigurationmanager.cpp: ../IPS4MCO/qnetworkconfigurationmanager.h \
 		/opt/homebrew/lib/QtCore.framework/Headers/QObject \
@@ -3082,7 +3104,194 @@ moc_qnetworkconfigurationmanager.cpp: ../IPS4MCO/qnetworkconfigurationmanager.h 
 		/opt/homebrew/include/QtCore/qelapsedtimer.h \
 		moc_predefs.h \
 		/opt/homebrew/share/qt/libexec/moc
-	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include /Users/temamodder/Documents/Repositories/CarWashTerminals/build-IPS4MCO-Qt_6_9_0_Desktop-Debug/moc_predefs.h -I/opt/homebrew/share/qt/mkspecs/macx-clang -I/Users/temamodder/Documents/Repositories/CarWashTerminals/IPS4MCO -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/quickitem -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/lib -I/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/include -I/opt/homebrew/lib/QtMultimediaWidgets.framework/Headers -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtQuickControls2.framework/Headers -I/opt/homebrew/lib/QtQuick.framework/Headers -I/opt/homebrew/lib/QtOpenGL.framework/Headers -I/opt/homebrew/lib/QtMultimedia.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtQmlMeta.framework/Headers -I/opt/homebrew/lib/QtQmlModels.framework/Headers -I/opt/homebrew/lib/QtQmlWorkerScript.framework/Headers -I/opt/homebrew/lib/QtQml.framework/Headers -I/opt/homebrew/include -I/opt/homebrew/include/QtQmlIntegration -I/opt/homebrew/lib/QtSerialBus.framework/Headers -I/opt/homebrew/lib/QtNetworkAuth.framework/Headers -I/opt/homebrew/lib/QtNetwork.framework/Headers -I/opt/homebrew/lib/QtSerialPort.framework/Headers -I/opt/homebrew/lib/QtSql.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/opt/homebrew/lib ../IPS4MCO/qnetworkconfigurationmanager.h -o moc_qnetworkconfigurationmanager.cpp
+	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include /Users/temamodder/Documents/Repositories/CarWashTerminals/build-IPS4MCO-Qt_6_9_0_Desktop-Debug/moc_predefs.h -I/opt/homebrew/share/qt/mkspecs/macx-clang -I/Users/temamodder/Documents/Repositories/CarWashTerminals/IPS4MCO -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/quickitem -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/lib -I/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/include -I/opt/homebrew/lib/QtMultimediaWidgets.framework/Headers -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtQuickControls2.framework/Headers -I/opt/homebrew/lib/QtQuick.framework/Headers -I/opt/homebrew/lib/QtOpenGL.framework/Headers -I/opt/homebrew/lib/QtMultimedia.framework/Headers -I/opt/homebrew/lib/QtSvg.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtQmlMeta.framework/Headers -I/opt/homebrew/lib/QtQmlModels.framework/Headers -I/opt/homebrew/lib/QtQmlWorkerScript.framework/Headers -I/opt/homebrew/lib/QtQml.framework/Headers -I/opt/homebrew/include -I/opt/homebrew/include/QtQmlIntegration -I/opt/homebrew/lib/QtSerialBus.framework/Headers -I/opt/homebrew/lib/QtNetworkAuth.framework/Headers -I/opt/homebrew/lib/QtNetwork.framework/Headers -I/opt/homebrew/lib/QtSerialPort.framework/Headers -I/opt/homebrew/lib/QtSql.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/opt/homebrew/lib ../IPS4MCO/qnetworkconfigurationmanager.h -o moc_qnetworkconfigurationmanager.cpp
+
+moc_yookassa.cpp: ../include/yookassa.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QObject \
+		/opt/homebrew/lib/QtCore.framework/Headers/qobject.h \
+		/opt/homebrew/include/QtCore/qobjectdefs.h \
+		/opt/homebrew/include/QtCore/qnamespace.h \
+		/opt/homebrew/include/QtCore/qglobal.h \
+		/opt/homebrew/include/QtCore/qtcoreglobal.h \
+		/opt/homebrew/include/QtCore/qtversionchecks.h \
+		/opt/homebrew/include/QtCore/qtconfiginclude.h \
+		/opt/homebrew/include/QtCore/qconfig.h \
+		/opt/homebrew/include/QtCore/qtcore-config.h \
+		/opt/homebrew/include/QtCore/qtconfigmacros.h \
+		/opt/homebrew/include/QtCore/qtdeprecationdefinitions.h \
+		/opt/homebrew/include/QtCore/qcompilerdetection.h \
+		/opt/homebrew/include/QtCore/qprocessordetection.h \
+		/opt/homebrew/include/QtCore/qsystemdetection.h \
+		/opt/homebrew/include/QtCore/qtcoreexports.h \
+		/opt/homebrew/include/QtCore/qtdeprecationmarkers.h \
+		/opt/homebrew/include/QtCore/qtclasshelpermacros.h \
+		/opt/homebrew/include/QtCore/qtpreprocessorsupport.h \
+		/opt/homebrew/include/QtCore/qassert.h \
+		/opt/homebrew/include/QtCore/qtnoop.h \
+		/opt/homebrew/include/QtCore/qtypes.h \
+		/opt/homebrew/include/QtCore/qtversion.h \
+		/opt/homebrew/include/QtCore/qtypeinfo.h \
+		/opt/homebrew/include/QtCore/qcontainerfwd.h \
+		/opt/homebrew/include/QtCore/qsysinfo.h \
+		/opt/homebrew/include/QtCore/qlogging.h \
+		/opt/homebrew/include/QtCore/qflags.h \
+		/opt/homebrew/include/QtCore/qcompare_impl.h \
+		/opt/homebrew/include/QtCore/qatomic.h \
+		/opt/homebrew/include/QtCore/qbasicatomic.h \
+		/opt/homebrew/include/QtCore/qatomic_cxx11.h \
+		/opt/homebrew/include/QtCore/qgenericatomic.h \
+		/opt/homebrew/include/QtCore/qyieldcpu.h \
+		/opt/homebrew/include/QtCore/qconstructormacros.h \
+		/opt/homebrew/include/QtCore/qdarwinhelpers.h \
+		/opt/homebrew/include/QtCore/qexceptionhandling.h \
+		/opt/homebrew/include/QtCore/qforeach.h \
+		/opt/homebrew/include/QtCore/qttypetraits.h \
+		/opt/homebrew/include/QtCore/qfunctionpointer.h \
+		/opt/homebrew/include/QtCore/qglobalstatic.h \
+		/opt/homebrew/include/QtCore/qmalloc.h \
+		/opt/homebrew/include/QtCore/qminmax.h \
+		/opt/homebrew/include/QtCore/qnumeric.h \
+		/opt/homebrew/include/QtCore/qoverload.h \
+		/opt/homebrew/include/QtCore/qswap.h \
+		/opt/homebrew/include/QtCore/qtenvironmentvariables.h \
+		/opt/homebrew/include/QtCore/qtresource.h \
+		/opt/homebrew/include/QtCore/qttranslation.h \
+		/opt/homebrew/include/QtCore/qversiontagging.h \
+		/opt/homebrew/include/QtCore/qcompare.h \
+		/opt/homebrew/include/QtCore/qstdlibdetection.h \
+		/opt/homebrew/include/QtCore/qcomparehelpers.h \
+		/opt/homebrew/include/QtCore/q20type_traits.h \
+		/opt/homebrew/include/QtCore/qtmetamacros.h \
+		/opt/homebrew/include/QtCore/qobjectdefs_impl.h \
+		/opt/homebrew/include/QtCore/qfunctionaltools_impl.h \
+		/opt/homebrew/include/QtCore/qstring.h \
+		/opt/homebrew/include/QtCore/qchar.h \
+		/opt/homebrew/include/QtCore/qstringview.h \
+		/opt/homebrew/include/QtCore/qbytearray.h \
+		/opt/homebrew/include/QtCore/qrefcount.h \
+		/opt/homebrew/include/QtCore/qarraydata.h \
+		/opt/homebrew/include/QtCore/qpair.h \
+		/opt/homebrew/include/QtCore/qarraydatapointer.h \
+		/opt/homebrew/include/QtCore/qarraydataops.h \
+		/opt/homebrew/include/QtCore/qcontainertools_impl.h \
+		/opt/homebrew/include/QtCore/qxptype_traits.h \
+		/opt/homebrew/include/QtCore/q20functional.h \
+		/opt/homebrew/include/QtCore/q20memory.h \
+		/opt/homebrew/include/QtCore/q17memory.h \
+		/opt/homebrew/include/QtCore/qbytearrayalgorithms.h \
+		/opt/homebrew/include/QtCore/qbytearrayview.h \
+		/opt/homebrew/include/QtCore/qstringfwd.h \
+		/opt/homebrew/include/QtCore/qstringliteral.h \
+		/opt/homebrew/include/QtCore/qstringalgorithms.h \
+		/opt/homebrew/include/QtCore/qlatin1stringview.h \
+		/opt/homebrew/include/QtCore/qanystringview.h \
+		/opt/homebrew/include/QtCore/qutf8stringview.h \
+		/opt/homebrew/include/QtCore/qstringtokenizer.h \
+		/opt/homebrew/include/QtCore/qstringbuilder.h \
+		/opt/homebrew/include/QtCore/qstringconverter.h \
+		/opt/homebrew/include/QtCore/qstringconverter_base.h \
+		/opt/homebrew/include/QtCore/qlist.h \
+		/opt/homebrew/include/QtCore/qhashfunctions.h \
+		/opt/homebrew/include/QtCore/qiterator.h \
+		/opt/homebrew/include/QtCore/qbytearraylist.h \
+		/opt/homebrew/include/QtCore/qstringlist.h \
+		/opt/homebrew/include/QtCore/qalgorithms.h \
+		/opt/homebrew/include/QtCore/qstringmatcher.h \
+		/opt/homebrew/include/QtCore/qcoreevent.h \
+		/opt/homebrew/include/QtCore/qbasictimer.h \
+		/opt/homebrew/include/QtCore/qabstracteventdispatcher.h \
+		/opt/homebrew/include/QtCore/qobject.h \
+		/opt/homebrew/include/QtCore/qscopedpointer.h \
+		/opt/homebrew/include/QtCore/qmetatype.h \
+		/opt/homebrew/include/QtCore/qdatastream.h \
+		/opt/homebrew/include/QtCore/qiodevicebase.h \
+		/opt/homebrew/include/QtCore/qfloat16.h \
+		/opt/homebrew/include/QtCore/qmath.h \
+		/opt/homebrew/include/QtCore/qtformat_impl.h \
+		/opt/homebrew/include/QtCore/qiterable.h \
+		/opt/homebrew/include/QtCore/qmetacontainer.h \
+		/opt/homebrew/include/QtCore/qcontainerinfo.h \
+		/opt/homebrew/include/QtCore/qtaggedpointer.h \
+		/opt/homebrew/include/QtCore/qscopeguard.h \
+		/opt/homebrew/include/QtCore/qobject_impl.h \
+		/opt/homebrew/include/QtCore/qbindingstorage.h \
+		/opt/homebrew/include/QtCore/qeventloop.h \
+		/opt/homebrew/include/QtCore/qdeadlinetimer.h \
+		/opt/homebrew/include/QtCore/qelapsedtimer.h \
+		/opt/homebrew/lib/QtNetwork.framework/Headers/QNetworkAccessManager \
+		/opt/homebrew/lib/QtNetwork.framework/Headers/qnetworkaccessmanager.h \
+		/opt/homebrew/include/QtNetwork/qtnetworkglobal.h \
+		/opt/homebrew/include/QtNetwork/qtnetwork-config.h \
+		/opt/homebrew/include/QtNetwork/qtnetworkexports.h \
+		/opt/homebrew/include/QtNetwork/qnetworkrequest.h \
+		/opt/homebrew/include/QtNetwork/qhttpheaders.h \
+		/opt/homebrew/include/QtCore/qshareddata.h \
+		/opt/homebrew/include/QtCore/QSharedDataPointer \
+		/opt/homebrew/include/QtCore/QString \
+		/opt/homebrew/include/QtCore/QUrl \
+		/opt/homebrew/include/QtCore/qurl.h \
+		/opt/homebrew/include/QtCore/QVariant \
+		/opt/homebrew/include/QtCore/qvariant.h \
+		/opt/homebrew/include/QtCore/qdebug.h \
+		/opt/homebrew/include/QtCore/qtextstream.h \
+		/opt/homebrew/include/QtCore/qcontiguouscache.h \
+		/opt/homebrew/include/QtCore/qsharedpointer.h \
+		/opt/homebrew/include/QtCore/qsharedpointer_impl.h \
+		/opt/homebrew/include/QtCore/qmap.h \
+		/opt/homebrew/include/QtCore/qshareddata_impl.h \
+		/opt/homebrew/include/QtCore/qset.h \
+		/opt/homebrew/include/QtCore/qhash.h \
+		/opt/homebrew/include/QtCore/qvarlengtharray.h \
+		/opt/homebrew/include/QtCore/q23utility.h \
+		/opt/homebrew/include/QtCore/q20utility.h \
+		/opt/homebrew/include/QtCore/q26numeric.h \
+		/opt/homebrew/include/QtCore/QList \
+		/opt/homebrew/include/QtCore/QObject \
+		/opt/homebrew/include/QtNetwork/QSslConfiguration \
+		/opt/homebrew/include/QtNetwork/qsslconfiguration.h \
+		/opt/homebrew/include/QtNetwork/qsslsocket.h \
+		/opt/homebrew/include/QtNetwork/qtcpsocket.h \
+		/opt/homebrew/include/QtNetwork/qabstractsocket.h \
+		/opt/homebrew/include/QtNetwork/qhostaddress.h \
+		/opt/homebrew/include/QtCore/qiodevice.h \
+		/opt/homebrew/include/QtCore/qspan.h \
+		/opt/homebrew/include/QtCore/q20iterator.h \
+		/opt/homebrew/include/QtNetwork/qsslerror.h \
+		/opt/homebrew/include/QtNetwork/qsslcertificate.h \
+		/opt/homebrew/include/QtCore/qcryptographichash.h \
+		/opt/homebrew/include/QtCore/qdatetime.h \
+		/opt/homebrew/include/QtCore/qcalendar.h \
+		/opt/homebrew/include/QtCore/qlocale.h \
+		/opt/homebrew/include/QtNetwork/qssl.h \
+		/opt/homebrew/include/QtCore/QFlags \
+		/opt/homebrew/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		/opt/homebrew/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		/opt/homebrew/include/QtCore/QMetaType \
+		/opt/homebrew/lib/QtNetwork.framework/Headers/QNetworkReply \
+		/opt/homebrew/lib/QtNetwork.framework/Headers/qnetworkreply.h \
+		/opt/homebrew/include/QtCore/QIODevice \
+		/opt/homebrew/include/QtNetwork/QNetworkRequest \
+		/opt/homebrew/include/QtNetwork/QNetworkAccessManager \
+		/opt/homebrew/include/QtNetwork/qnetworkaccessmanager.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QJsonDocument \
+		/opt/homebrew/lib/QtCore.framework/Headers/qjsondocument.h \
+		/opt/homebrew/include/QtCore/qjsonparseerror.h \
+		/opt/homebrew/include/QtCore/qjsonvalue.h \
+		/opt/homebrew/include/QtCore/qcborvalue.h \
+		/opt/homebrew/include/QtCore/qcborcommon.h \
+		/opt/homebrew/include/QtCore/qregularexpression.h \
+		/opt/homebrew/include/QtCore/quuid.h \
+		/opt/homebrew/include/QtCore/qendian.h \
+		/opt/homebrew/include/QtCore/qjsondocument.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QJsonObject \
+		/opt/homebrew/lib/QtCore.framework/Headers/qjsonobject.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QUuid \
+		/opt/homebrew/lib/QtCore.framework/Headers/quuid.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QString \
+		/opt/homebrew/lib/QtCore.framework/Headers/qstring.h \
+		moc_predefs.h \
+		/opt/homebrew/share/qt/libexec/moc
+	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include /Users/temamodder/Documents/Repositories/CarWashTerminals/build-IPS4MCO-Qt_6_9_0_Desktop-Debug/moc_predefs.h -I/opt/homebrew/share/qt/mkspecs/macx-clang -I/Users/temamodder/Documents/Repositories/CarWashTerminals/IPS4MCO -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/quickitem -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/qt-qrcode/lib -I/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/include -I/Users/temamodder/Documents/Repositories/CarWashTerminals/include -I/opt/homebrew/lib/QtMultimediaWidgets.framework/Headers -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtQuickControls2.framework/Headers -I/opt/homebrew/lib/QtQuick.framework/Headers -I/opt/homebrew/lib/QtOpenGL.framework/Headers -I/opt/homebrew/lib/QtMultimedia.framework/Headers -I/opt/homebrew/lib/QtSvg.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtQmlMeta.framework/Headers -I/opt/homebrew/lib/QtQmlModels.framework/Headers -I/opt/homebrew/lib/QtQmlWorkerScript.framework/Headers -I/opt/homebrew/lib/QtQml.framework/Headers -I/opt/homebrew/include -I/opt/homebrew/include/QtQmlIntegration -I/opt/homebrew/lib/QtSerialBus.framework/Headers -I/opt/homebrew/lib/QtNetworkAuth.framework/Headers -I/opt/homebrew/lib/QtNetwork.framework/Headers -I/opt/homebrew/lib/QtSerialPort.framework/Headers -I/opt/homebrew/lib/QtSql.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/opt/homebrew/lib ../include/yookassa.h -o moc_yookassa.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -3254,8 +3463,16 @@ accountmanager.o: ../IPS4MCO/accountmanager/accountmanager.cpp ../IPS4MCO/accoun
 		/opt/homebrew/include/QtNetwork/qhostaddress.h \
 		/opt/homebrew/include/QtNetwork/qabstractsocket.h \
 		/opt/homebrew/include/QtCore/qiodevice.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QVariantList \
+		/opt/homebrew/lib/QtCore.framework/Headers/qvariantlist.h \
+		/opt/homebrew/include/QtCore/QList \
+		/opt/homebrew/include/QtCore/QVariant \
 		/opt/homebrew/lib/QtNetwork.framework/Headers/QNetworkInformation \
-		/opt/homebrew/lib/QtNetwork.framework/Headers/qnetworkinformation.h
+		/opt/homebrew/lib/QtNetwork.framework/Headers/qnetworkinformation.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QDateTime \
+		/opt/homebrew/lib/QtCore.framework/Headers/qdatetime.h \
+		/opt/homebrew/include/QtCore/qcalendar.h \
+		/opt/homebrew/include/QtCore/qlocale.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o accountmanager.o ../IPS4MCO/accountmanager/accountmanager.cpp
 
 QtQrCodeQuickItem.o: ../qt-qrcode/quickitem/QtQrCodeQuickItem.cpp ../qt-qrcode/quickitem/QtQrCodeQuickItem.hpp \
@@ -4014,7 +4231,11 @@ engine.o: ../IPS4MCO/engine/engine.cpp ../IPS4MCO/engine/engine.h \
 		/opt/homebrew/include/QtNetwork/qtnetwork-config.h \
 		/opt/homebrew/include/QtNetwork/qtnetworkexports.h \
 		/opt/homebrew/include/QtNetwork/qhostaddress.h \
-		/opt/homebrew/include/QtNetwork/qabstractsocket.h
+		/opt/homebrew/include/QtNetwork/qabstractsocket.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QVariantList \
+		/opt/homebrew/lib/QtCore.framework/Headers/qvariantlist.h \
+		/opt/homebrew/include/QtCore/QList \
+		/opt/homebrew/include/QtCore/QVariant
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o engine.o ../IPS4MCO/engine/engine.cpp
 
 logmanager.o: ../IPS4MCO/engine/logmanager.cpp ../IPS4MCO/engine/logmanager.h \
@@ -4638,6 +4859,9 @@ main.o: ../IPS4MCO/main.cpp /opt/homebrew/lib/QtGui.framework/Headers/QGuiApplic
 		/opt/homebrew/lib/QtNetwork.framework/Headers/qhostinfo.h \
 		/opt/homebrew/include/QtNetwork/qhostaddress.h \
 		/opt/homebrew/include/QtNetwork/qabstractsocket.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QVariantList \
+		/opt/homebrew/lib/QtCore.framework/Headers/qvariantlist.h \
+		/opt/homebrew/include/QtCore/QVariant \
 		../include/yookassa.h \
 		/opt/homebrew/lib/QtNetwork.framework/Headers/QNetworkAccessManager \
 		/opt/homebrew/lib/QtNetwork.framework/Headers/qnetworkaccessmanager.h \
@@ -4646,7 +4870,6 @@ main.o: ../IPS4MCO/main.cpp /opt/homebrew/lib/QtGui.framework/Headers/QGuiApplic
 		/opt/homebrew/include/QtCore/QSharedDataPointer \
 		/opt/homebrew/include/QtCore/QString \
 		/opt/homebrew/include/QtCore/QUrl \
-		/opt/homebrew/include/QtCore/QVariant \
 		/opt/homebrew/include/QtCore/q26numeric.h \
 		/opt/homebrew/include/QtNetwork/QSslConfiguration \
 		/opt/homebrew/include/QtNetwork/qsslconfiguration.h \
@@ -5003,6 +5226,455 @@ database_manager.o: ../IPS4MCO/db_manager/database_manager.cpp ../IPS4MCO/db_man
 		/opt/homebrew/lib/QtCore.framework/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o database_manager.o ../IPS4MCO/db_manager/database_manager.cpp
 
+qtqrcode.o: ../qt-qrcode/lib/qtqrcode.cpp ../qt-qrcode/lib/qtqrcode.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QByteArray \
+		/opt/homebrew/lib/QtCore.framework/Headers/qbytearray.h \
+		/opt/homebrew/include/QtCore/qrefcount.h \
+		/opt/homebrew/include/QtCore/qatomic.h \
+		/opt/homebrew/include/QtCore/qbasicatomic.h \
+		/opt/homebrew/include/QtCore/qatomic_cxx11.h \
+		/opt/homebrew/include/QtCore/qgenericatomic.h \
+		/opt/homebrew/include/QtCore/qcompilerdetection.h \
+		/opt/homebrew/include/QtCore/qprocessordetection.h \
+		/opt/homebrew/include/QtCore/qsystemdetection.h \
+		/opt/homebrew/include/QtCore/qtconfiginclude.h \
+		/opt/homebrew/include/QtCore/qconfig.h \
+		/opt/homebrew/include/QtCore/qtcore-config.h \
+		/opt/homebrew/include/QtCore/qtconfigmacros.h \
+		/opt/homebrew/include/QtCore/qtdeprecationdefinitions.h \
+		/opt/homebrew/include/QtCore/qtversionchecks.h \
+		/opt/homebrew/include/QtCore/qtypes.h \
+		/opt/homebrew/include/QtCore/qassert.h \
+		/opt/homebrew/include/QtCore/qtcoreexports.h \
+		/opt/homebrew/include/QtCore/qtdeprecationmarkers.h \
+		/opt/homebrew/include/QtCore/qtclasshelpermacros.h \
+		/opt/homebrew/include/QtCore/qtnoop.h \
+		/opt/homebrew/include/QtCore/qyieldcpu.h \
+		/opt/homebrew/include/QtCore/qnamespace.h \
+		/opt/homebrew/include/QtCore/qglobal.h \
+		/opt/homebrew/include/QtCore/qtcoreglobal.h \
+		/opt/homebrew/include/QtCore/qtpreprocessorsupport.h \
+		/opt/homebrew/include/QtCore/qtversion.h \
+		/opt/homebrew/include/QtCore/qtypeinfo.h \
+		/opt/homebrew/include/QtCore/qcontainerfwd.h \
+		/opt/homebrew/include/QtCore/qsysinfo.h \
+		/opt/homebrew/include/QtCore/qlogging.h \
+		/opt/homebrew/include/QtCore/qflags.h \
+		/opt/homebrew/include/QtCore/qcompare_impl.h \
+		/opt/homebrew/include/QtCore/qconstructormacros.h \
+		/opt/homebrew/include/QtCore/qdarwinhelpers.h \
+		/opt/homebrew/include/QtCore/qexceptionhandling.h \
+		/opt/homebrew/include/QtCore/qforeach.h \
+		/opt/homebrew/include/QtCore/qttypetraits.h \
+		/opt/homebrew/include/QtCore/qfunctionpointer.h \
+		/opt/homebrew/include/QtCore/qglobalstatic.h \
+		/opt/homebrew/include/QtCore/qmalloc.h \
+		/opt/homebrew/include/QtCore/qminmax.h \
+		/opt/homebrew/include/QtCore/qnumeric.h \
+		/opt/homebrew/include/QtCore/qoverload.h \
+		/opt/homebrew/include/QtCore/qswap.h \
+		/opt/homebrew/include/QtCore/qtenvironmentvariables.h \
+		/opt/homebrew/include/QtCore/qtresource.h \
+		/opt/homebrew/include/QtCore/qttranslation.h \
+		/opt/homebrew/include/QtCore/qversiontagging.h \
+		/opt/homebrew/include/QtCore/qcompare.h \
+		/opt/homebrew/include/QtCore/qstdlibdetection.h \
+		/opt/homebrew/include/QtCore/qcomparehelpers.h \
+		/opt/homebrew/include/QtCore/q20type_traits.h \
+		/opt/homebrew/include/QtCore/qtmetamacros.h \
+		/opt/homebrew/include/QtCore/qarraydata.h \
+		/opt/homebrew/include/QtCore/qpair.h \
+		/opt/homebrew/include/QtCore/qarraydatapointer.h \
+		/opt/homebrew/include/QtCore/qarraydataops.h \
+		/opt/homebrew/include/QtCore/qcontainertools_impl.h \
+		/opt/homebrew/include/QtCore/qxptype_traits.h \
+		/opt/homebrew/include/QtCore/q20functional.h \
+		/opt/homebrew/include/QtCore/q20memory.h \
+		/opt/homebrew/include/QtCore/q17memory.h \
+		/opt/homebrew/include/QtCore/qbytearrayalgorithms.h \
+		/opt/homebrew/include/QtCore/qbytearrayview.h \
+		/opt/homebrew/include/QtCore/qstringfwd.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QSharedDataPointer \
+		/opt/homebrew/lib/QtCore.framework/Headers/qshareddata.h \
+		/opt/homebrew/include/QtCore/qhashfunctions.h \
+		/opt/homebrew/include/QtCore/qstring.h \
+		/opt/homebrew/include/QtCore/qchar.h \
+		/opt/homebrew/include/QtCore/qstringview.h \
+		/opt/homebrew/include/QtCore/qbytearray.h \
+		/opt/homebrew/include/QtCore/qstringliteral.h \
+		/opt/homebrew/include/QtCore/qstringalgorithms.h \
+		/opt/homebrew/include/QtCore/qlatin1stringview.h \
+		/opt/homebrew/include/QtCore/qanystringview.h \
+		/opt/homebrew/include/QtCore/qutf8stringview.h \
+		/opt/homebrew/include/QtCore/qstringtokenizer.h \
+		/opt/homebrew/include/QtCore/qstringbuilder.h \
+		/opt/homebrew/include/QtCore/qstringconverter.h \
+		/opt/homebrew/include/QtCore/qstringconverter_base.h \
+		../qt-qrcode/lib/libqrencode/qrencode.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QString \
+		/opt/homebrew/lib/QtCore.framework/Headers/qstring.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qtqrcode.o ../qt-qrcode/lib/qtqrcode.cpp
+
+qtqrcodepainter.o: ../qt-qrcode/lib/qtqrcodepainter.cpp ../qt-qrcode/lib/qtqrcodepainter.h \
+		/opt/homebrew/lib/QtGui.framework/Headers/QImage \
+		/opt/homebrew/lib/QtGui.framework/Headers/qimage.h \
+		/opt/homebrew/include/QtGui/qtguiglobal.h \
+		/opt/homebrew/include/QtCore/qglobal.h \
+		/opt/homebrew/include/QtCore/qtcoreglobal.h \
+		/opt/homebrew/include/QtCore/qtversionchecks.h \
+		/opt/homebrew/include/QtCore/qtconfiginclude.h \
+		/opt/homebrew/include/QtCore/qconfig.h \
+		/opt/homebrew/include/QtCore/qtcore-config.h \
+		/opt/homebrew/include/QtCore/qtconfigmacros.h \
+		/opt/homebrew/include/QtCore/qtdeprecationdefinitions.h \
+		/opt/homebrew/include/QtCore/qcompilerdetection.h \
+		/opt/homebrew/include/QtCore/qprocessordetection.h \
+		/opt/homebrew/include/QtCore/qsystemdetection.h \
+		/opt/homebrew/include/QtCore/qtcoreexports.h \
+		/opt/homebrew/include/QtCore/qtdeprecationmarkers.h \
+		/opt/homebrew/include/QtCore/qtclasshelpermacros.h \
+		/opt/homebrew/include/QtCore/qtpreprocessorsupport.h \
+		/opt/homebrew/include/QtCore/qassert.h \
+		/opt/homebrew/include/QtCore/qtnoop.h \
+		/opt/homebrew/include/QtCore/qtypes.h \
+		/opt/homebrew/include/QtCore/qtversion.h \
+		/opt/homebrew/include/QtCore/qtypeinfo.h \
+		/opt/homebrew/include/QtCore/qcontainerfwd.h \
+		/opt/homebrew/include/QtCore/qsysinfo.h \
+		/opt/homebrew/include/QtCore/qlogging.h \
+		/opt/homebrew/include/QtCore/qflags.h \
+		/opt/homebrew/include/QtCore/qcompare_impl.h \
+		/opt/homebrew/include/QtCore/qatomic.h \
+		/opt/homebrew/include/QtCore/qbasicatomic.h \
+		/opt/homebrew/include/QtCore/qatomic_cxx11.h \
+		/opt/homebrew/include/QtCore/qgenericatomic.h \
+		/opt/homebrew/include/QtCore/qyieldcpu.h \
+		/opt/homebrew/include/QtCore/qconstructormacros.h \
+		/opt/homebrew/include/QtCore/qdarwinhelpers.h \
+		/opt/homebrew/include/QtCore/qexceptionhandling.h \
+		/opt/homebrew/include/QtCore/qforeach.h \
+		/opt/homebrew/include/QtCore/qttypetraits.h \
+		/opt/homebrew/include/QtCore/qfunctionpointer.h \
+		/opt/homebrew/include/QtCore/qglobalstatic.h \
+		/opt/homebrew/include/QtCore/qmalloc.h \
+		/opt/homebrew/include/QtCore/qminmax.h \
+		/opt/homebrew/include/QtCore/qnumeric.h \
+		/opt/homebrew/include/QtCore/qoverload.h \
+		/opt/homebrew/include/QtCore/qswap.h \
+		/opt/homebrew/include/QtCore/qtenvironmentvariables.h \
+		/opt/homebrew/include/QtCore/qtresource.h \
+		/opt/homebrew/include/QtCore/qttranslation.h \
+		/opt/homebrew/include/QtCore/qversiontagging.h \
+		/opt/homebrew/include/QtGui/qtgui-config.h \
+		/opt/homebrew/include/QtGui/qtguiexports.h \
+		/opt/homebrew/include/QtGui/qcolor.h \
+		/opt/homebrew/include/QtGui/qrgb.h \
+		/opt/homebrew/include/QtCore/qnamespace.h \
+		/opt/homebrew/include/QtCore/qcompare.h \
+		/opt/homebrew/include/QtCore/qstdlibdetection.h \
+		/opt/homebrew/include/QtCore/qcomparehelpers.h \
+		/opt/homebrew/include/QtCore/q20type_traits.h \
+		/opt/homebrew/include/QtCore/qtmetamacros.h \
+		/opt/homebrew/include/QtCore/qstringlist.h \
+		/opt/homebrew/include/QtCore/qlist.h \
+		/opt/homebrew/include/QtCore/qarraydatapointer.h \
+		/opt/homebrew/include/QtCore/qarraydataops.h \
+		/opt/homebrew/include/QtCore/qarraydata.h \
+		/opt/homebrew/include/QtCore/qpair.h \
+		/opt/homebrew/include/QtCore/qcontainertools_impl.h \
+		/opt/homebrew/include/QtCore/qxptype_traits.h \
+		/opt/homebrew/include/QtCore/q20functional.h \
+		/opt/homebrew/include/QtCore/q20memory.h \
+		/opt/homebrew/include/QtCore/q17memory.h \
+		/opt/homebrew/include/QtCore/qhashfunctions.h \
+		/opt/homebrew/include/QtCore/qstring.h \
+		/opt/homebrew/include/QtCore/qchar.h \
+		/opt/homebrew/include/QtCore/qstringview.h \
+		/opt/homebrew/include/QtCore/qbytearray.h \
+		/opt/homebrew/include/QtCore/qrefcount.h \
+		/opt/homebrew/include/QtCore/qbytearrayalgorithms.h \
+		/opt/homebrew/include/QtCore/qbytearrayview.h \
+		/opt/homebrew/include/QtCore/qstringfwd.h \
+		/opt/homebrew/include/QtCore/qstringliteral.h \
+		/opt/homebrew/include/QtCore/qstringalgorithms.h \
+		/opt/homebrew/include/QtCore/qlatin1stringview.h \
+		/opt/homebrew/include/QtCore/qanystringview.h \
+		/opt/homebrew/include/QtCore/qutf8stringview.h \
+		/opt/homebrew/include/QtCore/qstringtokenizer.h \
+		/opt/homebrew/include/QtCore/qstringbuilder.h \
+		/opt/homebrew/include/QtCore/qstringconverter.h \
+		/opt/homebrew/include/QtCore/qstringconverter_base.h \
+		/opt/homebrew/include/QtCore/qiterator.h \
+		/opt/homebrew/include/QtCore/qbytearraylist.h \
+		/opt/homebrew/include/QtCore/qalgorithms.h \
+		/opt/homebrew/include/QtCore/qstringmatcher.h \
+		/opt/homebrew/include/QtGui/qrgba64.h \
+		/opt/homebrew/include/QtGui/qpaintdevice.h \
+		/opt/homebrew/include/QtGui/qwindowdefs.h \
+		/opt/homebrew/include/QtCore/qobjectdefs.h \
+		/opt/homebrew/include/QtCore/qobjectdefs_impl.h \
+		/opt/homebrew/include/QtCore/qfunctionaltools_impl.h \
+		/opt/homebrew/include/QtCore/qrect.h \
+		/opt/homebrew/include/QtCore/qmargins.h \
+		/opt/homebrew/include/QtCore/q23utility.h \
+		/opt/homebrew/include/QtCore/q20utility.h \
+		/opt/homebrew/include/QtCore/qsize.h \
+		/opt/homebrew/include/QtCore/qpoint.h \
+		/opt/homebrew/include/QtGui/qpixelformat.h \
+		/opt/homebrew/include/QtGui/qtransform.h \
+		/opt/homebrew/include/QtGui/qpolygon.h \
+		/opt/homebrew/include/QtGui/qregion.h \
+		/opt/homebrew/include/QtCore/qdatastream.h \
+		/opt/homebrew/include/QtCore/qscopedpointer.h \
+		/opt/homebrew/include/QtCore/qiodevicebase.h \
+		/opt/homebrew/include/QtCore/qspan.h \
+		/opt/homebrew/include/QtCore/q20iterator.h \
+		/opt/homebrew/include/QtCore/qline.h \
+		/opt/homebrew/lib/QtGui.framework/Headers/QBrush \
+		/opt/homebrew/lib/QtGui.framework/Headers/qbrush.h \
+		/opt/homebrew/include/QtGui/qimage.h \
+		/opt/homebrew/include/QtGui/qpixmap.h \
+		/opt/homebrew/include/QtCore/qshareddata.h \
+		/opt/homebrew/lib/QtGui.framework/Headers/QPainter \
+		/opt/homebrew/lib/QtGui.framework/Headers/qpainter.h \
+		/opt/homebrew/include/QtGui/qtextoption.h \
+		/opt/homebrew/include/QtCore/qmetatype.h \
+		/opt/homebrew/include/QtCore/qfloat16.h \
+		/opt/homebrew/include/QtCore/qmath.h \
+		/opt/homebrew/include/QtCore/qtformat_impl.h \
+		/opt/homebrew/include/QtCore/qiterable.h \
+		/opt/homebrew/include/QtCore/qmetacontainer.h \
+		/opt/homebrew/include/QtCore/qcontainerinfo.h \
+		/opt/homebrew/include/QtCore/qtaggedpointer.h \
+		/opt/homebrew/include/QtCore/qscopeguard.h \
+		/opt/homebrew/include/QtGui/qpen.h \
+		/opt/homebrew/include/QtGui/qbrush.h \
+		/opt/homebrew/include/QtGui/qfontinfo.h \
+		/opt/homebrew/include/QtGui/qfont.h \
+		/opt/homebrew/include/QtCore/qendian.h \
+		/opt/homebrew/include/QtGui/qfontvariableaxis.h \
+		/opt/homebrew/include/QtGui/qfontmetrics.h \
+		../qt-qrcode/lib/qtqrcode.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QByteArray \
+		/opt/homebrew/lib/QtCore.framework/Headers/qbytearray.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QSharedDataPointer \
+		/opt/homebrew/lib/QtCore.framework/Headers/qshareddata.h \
+		../qt-qrcode/lib/libqrencode/qrencode.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QSize \
+		/opt/homebrew/lib/QtCore.framework/Headers/qsize.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QRectF \
+		/opt/homebrew/lib/QtCore.framework/Headers/qrect.h \
+		/opt/homebrew/lib/QtSvg.framework/Headers/QSvgGenerator \
+		/opt/homebrew/lib/QtSvg.framework/Headers/qsvggenerator.h \
+		/opt/homebrew/include/QtCore/qiodevice.h \
+		/opt/homebrew/include/QtCore/qobject.h \
+		/opt/homebrew/include/QtCore/qcoreevent.h \
+		/opt/homebrew/include/QtCore/qbasictimer.h \
+		/opt/homebrew/include/QtCore/qabstracteventdispatcher.h \
+		/opt/homebrew/include/QtCore/qeventloop.h \
+		/opt/homebrew/include/QtCore/qdeadlinetimer.h \
+		/opt/homebrew/include/QtCore/qelapsedtimer.h \
+		/opt/homebrew/include/QtCore/qobject_impl.h \
+		/opt/homebrew/include/QtCore/qbindingstorage.h \
+		/opt/homebrew/include/QtSvg/qtsvgglobal.h \
+		/opt/homebrew/include/QtSvg/qtsvgexports.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qtqrcodepainter.o ../qt-qrcode/lib/qtqrcodepainter.cpp
+
+yookassa.o: ../src/yookassa.cpp ../include/yookassa.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QObject \
+		/opt/homebrew/lib/QtCore.framework/Headers/qobject.h \
+		/opt/homebrew/include/QtCore/qobjectdefs.h \
+		/opt/homebrew/include/QtCore/qnamespace.h \
+		/opt/homebrew/include/QtCore/qglobal.h \
+		/opt/homebrew/include/QtCore/qtcoreglobal.h \
+		/opt/homebrew/include/QtCore/qtversionchecks.h \
+		/opt/homebrew/include/QtCore/qtconfiginclude.h \
+		/opt/homebrew/include/QtCore/qconfig.h \
+		/opt/homebrew/include/QtCore/qtcore-config.h \
+		/opt/homebrew/include/QtCore/qtconfigmacros.h \
+		/opt/homebrew/include/QtCore/qtdeprecationdefinitions.h \
+		/opt/homebrew/include/QtCore/qcompilerdetection.h \
+		/opt/homebrew/include/QtCore/qprocessordetection.h \
+		/opt/homebrew/include/QtCore/qsystemdetection.h \
+		/opt/homebrew/include/QtCore/qtcoreexports.h \
+		/opt/homebrew/include/QtCore/qtdeprecationmarkers.h \
+		/opt/homebrew/include/QtCore/qtclasshelpermacros.h \
+		/opt/homebrew/include/QtCore/qtpreprocessorsupport.h \
+		/opt/homebrew/include/QtCore/qassert.h \
+		/opt/homebrew/include/QtCore/qtnoop.h \
+		/opt/homebrew/include/QtCore/qtypes.h \
+		/opt/homebrew/include/QtCore/qtversion.h \
+		/opt/homebrew/include/QtCore/qtypeinfo.h \
+		/opt/homebrew/include/QtCore/qcontainerfwd.h \
+		/opt/homebrew/include/QtCore/qsysinfo.h \
+		/opt/homebrew/include/QtCore/qlogging.h \
+		/opt/homebrew/include/QtCore/qflags.h \
+		/opt/homebrew/include/QtCore/qcompare_impl.h \
+		/opt/homebrew/include/QtCore/qatomic.h \
+		/opt/homebrew/include/QtCore/qbasicatomic.h \
+		/opt/homebrew/include/QtCore/qatomic_cxx11.h \
+		/opt/homebrew/include/QtCore/qgenericatomic.h \
+		/opt/homebrew/include/QtCore/qyieldcpu.h \
+		/opt/homebrew/include/QtCore/qconstructormacros.h \
+		/opt/homebrew/include/QtCore/qdarwinhelpers.h \
+		/opt/homebrew/include/QtCore/qexceptionhandling.h \
+		/opt/homebrew/include/QtCore/qforeach.h \
+		/opt/homebrew/include/QtCore/qttypetraits.h \
+		/opt/homebrew/include/QtCore/qfunctionpointer.h \
+		/opt/homebrew/include/QtCore/qglobalstatic.h \
+		/opt/homebrew/include/QtCore/qmalloc.h \
+		/opt/homebrew/include/QtCore/qminmax.h \
+		/opt/homebrew/include/QtCore/qnumeric.h \
+		/opt/homebrew/include/QtCore/qoverload.h \
+		/opt/homebrew/include/QtCore/qswap.h \
+		/opt/homebrew/include/QtCore/qtenvironmentvariables.h \
+		/opt/homebrew/include/QtCore/qtresource.h \
+		/opt/homebrew/include/QtCore/qttranslation.h \
+		/opt/homebrew/include/QtCore/qversiontagging.h \
+		/opt/homebrew/include/QtCore/qcompare.h \
+		/opt/homebrew/include/QtCore/qstdlibdetection.h \
+		/opt/homebrew/include/QtCore/qcomparehelpers.h \
+		/opt/homebrew/include/QtCore/q20type_traits.h \
+		/opt/homebrew/include/QtCore/qtmetamacros.h \
+		/opt/homebrew/include/QtCore/qobjectdefs_impl.h \
+		/opt/homebrew/include/QtCore/qfunctionaltools_impl.h \
+		/opt/homebrew/include/QtCore/qstring.h \
+		/opt/homebrew/include/QtCore/qchar.h \
+		/opt/homebrew/include/QtCore/qstringview.h \
+		/opt/homebrew/include/QtCore/qbytearray.h \
+		/opt/homebrew/include/QtCore/qrefcount.h \
+		/opt/homebrew/include/QtCore/qarraydata.h \
+		/opt/homebrew/include/QtCore/qpair.h \
+		/opt/homebrew/include/QtCore/qarraydatapointer.h \
+		/opt/homebrew/include/QtCore/qarraydataops.h \
+		/opt/homebrew/include/QtCore/qcontainertools_impl.h \
+		/opt/homebrew/include/QtCore/qxptype_traits.h \
+		/opt/homebrew/include/QtCore/q20functional.h \
+		/opt/homebrew/include/QtCore/q20memory.h \
+		/opt/homebrew/include/QtCore/q17memory.h \
+		/opt/homebrew/include/QtCore/qbytearrayalgorithms.h \
+		/opt/homebrew/include/QtCore/qbytearrayview.h \
+		/opt/homebrew/include/QtCore/qstringfwd.h \
+		/opt/homebrew/include/QtCore/qstringliteral.h \
+		/opt/homebrew/include/QtCore/qstringalgorithms.h \
+		/opt/homebrew/include/QtCore/qlatin1stringview.h \
+		/opt/homebrew/include/QtCore/qanystringview.h \
+		/opt/homebrew/include/QtCore/qutf8stringview.h \
+		/opt/homebrew/include/QtCore/qstringtokenizer.h \
+		/opt/homebrew/include/QtCore/qstringbuilder.h \
+		/opt/homebrew/include/QtCore/qstringconverter.h \
+		/opt/homebrew/include/QtCore/qstringconverter_base.h \
+		/opt/homebrew/include/QtCore/qlist.h \
+		/opt/homebrew/include/QtCore/qhashfunctions.h \
+		/opt/homebrew/include/QtCore/qiterator.h \
+		/opt/homebrew/include/QtCore/qbytearraylist.h \
+		/opt/homebrew/include/QtCore/qstringlist.h \
+		/opt/homebrew/include/QtCore/qalgorithms.h \
+		/opt/homebrew/include/QtCore/qstringmatcher.h \
+		/opt/homebrew/include/QtCore/qcoreevent.h \
+		/opt/homebrew/include/QtCore/qbasictimer.h \
+		/opt/homebrew/include/QtCore/qabstracteventdispatcher.h \
+		/opt/homebrew/include/QtCore/qobject.h \
+		/opt/homebrew/include/QtCore/qscopedpointer.h \
+		/opt/homebrew/include/QtCore/qmetatype.h \
+		/opt/homebrew/include/QtCore/qdatastream.h \
+		/opt/homebrew/include/QtCore/qiodevicebase.h \
+		/opt/homebrew/include/QtCore/qfloat16.h \
+		/opt/homebrew/include/QtCore/qmath.h \
+		/opt/homebrew/include/QtCore/qtformat_impl.h \
+		/opt/homebrew/include/QtCore/qiterable.h \
+		/opt/homebrew/include/QtCore/qmetacontainer.h \
+		/opt/homebrew/include/QtCore/qcontainerinfo.h \
+		/opt/homebrew/include/QtCore/qtaggedpointer.h \
+		/opt/homebrew/include/QtCore/qscopeguard.h \
+		/opt/homebrew/include/QtCore/qobject_impl.h \
+		/opt/homebrew/include/QtCore/qbindingstorage.h \
+		/opt/homebrew/include/QtCore/qeventloop.h \
+		/opt/homebrew/include/QtCore/qdeadlinetimer.h \
+		/opt/homebrew/include/QtCore/qelapsedtimer.h \
+		/opt/homebrew/lib/QtNetwork.framework/Headers/QNetworkAccessManager \
+		/opt/homebrew/lib/QtNetwork.framework/Headers/qnetworkaccessmanager.h \
+		/opt/homebrew/include/QtNetwork/qtnetworkglobal.h \
+		/opt/homebrew/include/QtNetwork/qtnetwork-config.h \
+		/opt/homebrew/include/QtNetwork/qtnetworkexports.h \
+		/opt/homebrew/include/QtNetwork/qnetworkrequest.h \
+		/opt/homebrew/include/QtNetwork/qhttpheaders.h \
+		/opt/homebrew/include/QtCore/qshareddata.h \
+		/opt/homebrew/include/QtCore/QSharedDataPointer \
+		/opt/homebrew/include/QtCore/QString \
+		/opt/homebrew/include/QtCore/QUrl \
+		/opt/homebrew/include/QtCore/qurl.h \
+		/opt/homebrew/include/QtCore/QVariant \
+		/opt/homebrew/include/QtCore/qvariant.h \
+		/opt/homebrew/include/QtCore/qdebug.h \
+		/opt/homebrew/include/QtCore/qtextstream.h \
+		/opt/homebrew/include/QtCore/qcontiguouscache.h \
+		/opt/homebrew/include/QtCore/qsharedpointer.h \
+		/opt/homebrew/include/QtCore/qsharedpointer_impl.h \
+		/opt/homebrew/include/QtCore/qmap.h \
+		/opt/homebrew/include/QtCore/qshareddata_impl.h \
+		/opt/homebrew/include/QtCore/qset.h \
+		/opt/homebrew/include/QtCore/qhash.h \
+		/opt/homebrew/include/QtCore/qvarlengtharray.h \
+		/opt/homebrew/include/QtCore/q23utility.h \
+		/opt/homebrew/include/QtCore/q20utility.h \
+		/opt/homebrew/include/QtCore/q26numeric.h \
+		/opt/homebrew/include/QtCore/QList \
+		/opt/homebrew/include/QtCore/QObject \
+		/opt/homebrew/include/QtNetwork/QSslConfiguration \
+		/opt/homebrew/include/QtNetwork/qsslconfiguration.h \
+		/opt/homebrew/include/QtNetwork/qsslsocket.h \
+		/opt/homebrew/include/QtNetwork/qtcpsocket.h \
+		/opt/homebrew/include/QtNetwork/qabstractsocket.h \
+		/opt/homebrew/include/QtNetwork/qhostaddress.h \
+		/opt/homebrew/include/QtCore/qiodevice.h \
+		/opt/homebrew/include/QtCore/qspan.h \
+		/opt/homebrew/include/QtCore/q20iterator.h \
+		/opt/homebrew/include/QtNetwork/qsslerror.h \
+		/opt/homebrew/include/QtNetwork/qsslcertificate.h \
+		/opt/homebrew/include/QtCore/qcryptographichash.h \
+		/opt/homebrew/include/QtCore/qdatetime.h \
+		/opt/homebrew/include/QtCore/qcalendar.h \
+		/opt/homebrew/include/QtCore/qlocale.h \
+		/opt/homebrew/include/QtNetwork/qssl.h \
+		/opt/homebrew/include/QtCore/QFlags \
+		/opt/homebrew/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		/opt/homebrew/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		/opt/homebrew/include/QtCore/QMetaType \
+		/opt/homebrew/lib/QtNetwork.framework/Headers/QNetworkReply \
+		/opt/homebrew/lib/QtNetwork.framework/Headers/qnetworkreply.h \
+		/opt/homebrew/include/QtCore/QIODevice \
+		/opt/homebrew/include/QtNetwork/QNetworkRequest \
+		/opt/homebrew/include/QtNetwork/QNetworkAccessManager \
+		/opt/homebrew/include/QtNetwork/qnetworkaccessmanager.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QJsonDocument \
+		/opt/homebrew/lib/QtCore.framework/Headers/qjsondocument.h \
+		/opt/homebrew/include/QtCore/qjsonparseerror.h \
+		/opt/homebrew/include/QtCore/qjsonvalue.h \
+		/opt/homebrew/include/QtCore/qcborvalue.h \
+		/opt/homebrew/include/QtCore/qcborcommon.h \
+		/opt/homebrew/include/QtCore/qregularexpression.h \
+		/opt/homebrew/include/QtCore/quuid.h \
+		/opt/homebrew/include/QtCore/qendian.h \
+		/opt/homebrew/include/QtCore/qjsondocument.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QJsonObject \
+		/opt/homebrew/lib/QtCore.framework/Headers/qjsonobject.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QUuid \
+		/opt/homebrew/lib/QtCore.framework/Headers/quuid.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QString \
+		/opt/homebrew/lib/QtCore.framework/Headers/qstring.h \
+		/opt/homebrew/lib/QtNetwork.framework/Headers/QNetworkRequest \
+		/opt/homebrew/lib/QtNetwork.framework/Headers/qnetworkrequest.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QUrl \
+		/opt/homebrew/lib/QtCore.framework/Headers/qurl.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QJsonArray \
+		/opt/homebrew/lib/QtCore.framework/Headers/qjsonarray.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QDebug \
+		/opt/homebrew/lib/QtCore.framework/Headers/qdebug.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QByteArray \
+		/opt/homebrew/lib/QtCore.framework/Headers/qbytearray.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o yookassa.o ../src/yookassa.cpp
+
 qrc_qml.o: qrc_qml.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_qml.o qrc_qml.cpp
 
@@ -5035,6 +5707,9 @@ moc_database_manager.o: moc_database_manager.cpp
 
 moc_qnetworkconfigurationmanager.o: moc_qnetworkconfigurationmanager.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_qnetworkconfigurationmanager.o moc_qnetworkconfigurationmanager.cpp
+
+moc_yookassa.o: moc_yookassa.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_yookassa.o moc_yookassa.cpp
 
 ####### Install
 
