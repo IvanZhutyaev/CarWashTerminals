@@ -1,5 +1,6 @@
 #include "accountmanager.h"
 #include <QNetworkInformation>
+#include <QDateTime>
 
 AccountManager::AccountManager(QObject *parent) : QObject(parent) {
     // Central Database (PostgreSQL)
