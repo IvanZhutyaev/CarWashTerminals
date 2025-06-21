@@ -70,7 +70,7 @@ SOURCES += \
     db_manager/database_manager.cpp \
     $$QTQRCODE_PATH/lib/qtqrcode.cpp \
     $$QTQRCODE_PATH/lib/qtqrcodepainter.cpp \
-    src/yookassa.cpp \
+    ../src/yookassa.cpp \
 
 # Ресурсы
 RESOURCES += qml.qrc
