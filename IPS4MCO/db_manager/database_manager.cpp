@@ -146,7 +146,22 @@ void DatabaseManager::processOfflineQueue()
 }
 
 void DatabaseManager::processSyncQueue() {
-    // TODO: Реализовать обработку очереди синхронизации
+    // Обработка очереди синхронизации: переносим все офлайн-операции в БД
+    if (!m_isConnected) return;
+    QMutexLocker locker(&m_queueMutex);
+    while (!m_offlineQueue.isEmpty()) {
+        QVariantMap operation = m_offlineQueue.dequeue();
+        QString type = operation["type"].toString();
+        if (type == "replenishment") {
+            addReplenishment(
+                operation["cardNumber"].toString(),
+                operation["amount"].toDouble(),
+                operation["terminalId"].toString()
+            );
+        }
+        // Здесь можно добавить обработку других типов операций (например, история, возвраты и т.д.)
+    }
+    emit syncCompleted();
 }
 
 void DatabaseManager::checkConnection()

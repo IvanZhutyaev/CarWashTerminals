@@ -106,14 +106,41 @@ Item {
                     Layout.fillWidth: true
                 }
 
-                // TODO: Implement history of top-ups (if needed)
+                // История пополнений
                 Text {
-                    text: "ИСТОРИЯ ПОПОЛНЕНИЙ: (пока не реализовано)"
+                    text: "ИСТОРИЯ ПОПОЛНЕНИЙ:"
                     font.pixelSize: 16
                     color: "#AAAAAA"
                     horizontalAlignment: Text.AlignHCenter
                     Layout.fillWidth: true
                     wrapMode: Text.WordWrap
+                }
+                ListView {
+                    id: topUpHistoryView
+                    model: accountManager.getTopUpHistory()
+                    delegate: RowLayout {
+                        spacing: 10
+                        Text {
+                            text: "Сумма: " + model.amount + "₽"
+                            color: "#FFFFFF"
+                            font.pixelSize: 16
+                        }
+                        Text {
+                            text: "Время: " + model.timestamp
+                            color: "#CCCCCC"
+                            font.pixelSize: 14
+                        }
+                    }
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: 120
+                    visible: count > 0
+                }
+                Text {
+                    text: topUpHistoryView.count === 0 ? "Нет пополнений" : ""
+                    color: "#888888"
+                    font.pixelSize: 14
+                    Layout.fillWidth: true
+                    visible: topUpHistoryView.count === 0
                 }
             }
 

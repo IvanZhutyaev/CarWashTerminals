@@ -254,16 +254,139 @@ void AccountManager::checkNetworkStatus() {
 }
 
 void AccountManager::syncData() {
-    // TODO: Implement actual synchronization logic between central and local DBs
-    // This would involve comparing timestamps or versions and pushing/pulling changes.
-    qDebug() << "Synchronization triggered (not fully implemented yet).";
+    // Пример синхронизации: переносим все локальные пополнения в центральную БД при восстановлении связи
+    if (!m_isOnline) return;
+    if (!openCentralDatabase() || !openLocalDatabase()) return;
+    QSqlQuery localQuery(m_localDb);
+    localQuery.prepare("SELECT user_id, amount, timestamp FROM top_ups");
+    if (localQuery.exec()) {
+        while (localQuery.next()) {
+            int userId = localQuery.value(0).toInt();
+            int amount = localQuery.value(1).toInt();
+            QDateTime timestamp = localQuery.value(2).toDateTime();
+            // Добавляем в центральную БД, если такой записи нет
+            QSqlQuery checkQuery(m_centralDb);
+            checkQuery.prepare("SELECT COUNT(*) FROM top_ups WHERE user_id = :user_id AND amount = :amount AND timestamp = :timestamp");
+            checkQuery.bindValue(":user_id", userId);
+            checkQuery.bindValue(":amount", amount);
+            checkQuery.bindValue(":timestamp", timestamp);
+            if (checkQuery.exec() && checkQuery.next() && checkQuery.value(0).toInt() == 0) {
+                QSqlQuery insertQuery(m_centralDb);
+                insertQuery.prepare("INSERT INTO top_ups (user_id, amount, timestamp) VALUES (:user_id, :amount, :timestamp)");
+                insertQuery.bindValue(":user_id", userId);
+                insertQuery.bindValue(":amount", amount);
+                insertQuery.bindValue(":timestamp", timestamp);
+                insertQuery.exec();
+            }
+        }
+    }
+    closeCentralDatabase();
+    closeLocalDatabase();
+    qDebug() << "Synchronization completed.";
 }
 
 void AccountManager::updateBalance(int amount) {
-    // TODO: Реализуйте обновление баланса пользователя
-    Q_UNUSED(amount);
+    if (!m_isLoggedIn || m_currentUserId.isEmpty()) {
+        setLoginMessage("Ошибка: пользователь не авторизован");
+        emit loginStatus(false, m_loginMessage);
+        return;
+    }
+    if (!m_isOnline) {
+        setLoginMessage("Пополнение баланса временно недоступно: нет подключения к серверу.");
+        emit loginStatus(false, m_loginMessage);
+        return;
+    }
+    if (!openCentralDatabase()) {
+        setLoginMessage("Ошибка пополнения: не удалось подключиться к серверу базы данных.");
+        emit loginStatus(false, m_loginMessage);
+        return;
+    }
+    QSqlQuery query(m_centralDb);
+    query.prepare("UPDATE users SET balance = balance + :amount WHERE id = :id");
+    query.bindValue(":amount", amount);
+    query.bindValue(":id", m_currentUserId);
+    if (!query.exec()) {
+        setLoginMessage("Ошибка пополнения: " + query.lastError().text());
+        emit loginStatus(false, m_loginMessage);
+        closeCentralDatabase();
+        return;
+    }
+    // Добавляем запись в историю пополнений
+    QSqlQuery historyQuery(m_centralDb);
+    historyQuery.prepare("INSERT INTO top_ups (user_id, amount) VALUES (:user_id, :amount)");
+    historyQuery.bindValue(":user_id", m_currentUserId);
+    historyQuery.bindValue(":amount", amount);
+    historyQuery.exec(); // Не критично, если не удалось
+    // Получаем новый баланс
+    QSqlQuery balanceQuery(m_centralDb);
+    balanceQuery.prepare("SELECT balance FROM users WHERE id = :id");
+    balanceQuery.bindValue(":id", m_currentUserId);
+    if (balanceQuery.exec() && balanceQuery.next()) {
+        setCurrentBalance(balanceQuery.value(0).toString());
+    }
+    setLoginMessage("");
+    emit loginStatus(true, "Баланс успешно пополнен");
+    closeCentralDatabase();
 }
 
-void AccountManager::loginUser(const QString& username, const QString& password) {
-    // TODO: Реализовать авторизацию пользователя
+void AccountManager::loginUser(const QString& phoneNumber, const QString& password) {
+    if (!m_isOnline) {
+        setLoginMessage("Вход временно недоступен: нет подключения к серверу.");
+        emit loginStatus(false, m_loginMessage);
+        return;
+    }
+    if (!openCentralDatabase()) {
+        setLoginMessage("Ошибка входа: не удалось подключиться к серверу базы данных.");
+        emit loginStatus(false, m_loginMessage);
+        return;
+    }
+    QString hashedPassword = hashPassword(password);
+    QSqlQuery query(m_centralDb);
+    query.prepare("SELECT id, balance FROM users WHERE phone_number = :phone AND password_hash = :password");
+    query.bindValue(":phone", phoneNumber);
+    query.bindValue(":password", hashedPassword);
+    if (!query.exec() || !query.next()) {
+        setLoginMessage("Неверный номер телефона или пароль.");
+        emit loginStatus(false, m_loginMessage);
+        closeCentralDatabase();
+        return;
+    }
+    int userId = query.value(0).toInt();
+    int balance = query.value(1).toInt();
+    m_currentUserId = QString::number(userId);
+    setLoggedIn(true);
+    setCurrentBalance(QString::number(balance));
+    setLoginMessage("");
+    emit loginStatus(true, "Вход выполнен успешно");
+    emit showPersonalAccount();
+    closeCentralDatabase();
+}
+
+void AccountManager::showPersonalAccount() {
+    emit showPersonalAccount();
+}
+
+void AccountManager::hidePersonalAccount() {
+    emit hidePersonalAccount();
+}
+
+QVariantList AccountManager::getTopUpHistory() {
+    QVariantList historyList;
+    if (m_currentUserId.isEmpty()) return historyList;
+    bool useCentral = m_isOnline && openCentralDatabase();
+    QSqlDatabase db = useCentral ? m_centralDb : m_localDb;
+    if (!db.isOpen()) return historyList;
+    QSqlQuery query(db);
+    query.prepare("SELECT amount, timestamp FROM top_ups WHERE user_id = :user_id ORDER BY timestamp DESC");
+    query.bindValue(":user_id", m_currentUserId);
+    if (query.exec()) {
+        while (query.next()) {
+            QVariantMap record;
+            record["amount"] = query.value(0).toInt();
+            record["timestamp"] = query.value(1).toDateTime().toString(Qt::ISODate);
+            historyList.append(record);
+        }
+    }
+    if (useCentral) closeCentralDatabase();
+    return historyList;
 }

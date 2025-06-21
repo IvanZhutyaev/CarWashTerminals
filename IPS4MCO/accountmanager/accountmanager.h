@@ -9,6 +9,7 @@
 #include <QCryptographicHash>
 #include "qnetworkconfigurationmanager.h"
 #include <QHostInfo>
+#include <QVariantList>
 
 
 class AccountManager : public QObject
@@ -47,6 +48,7 @@ public slots:
     void checkNetworkStatus();
     void syncData(); // For future synchronization logic
     void updateBalance(int amount);
+    Q_INVOKABLE QVariantList getTopUpHistory();
 
 private:
     QSqlDatabase m_centralDb; // PostgreSQL
