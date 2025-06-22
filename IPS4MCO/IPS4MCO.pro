@@ -43,8 +43,7 @@ contains(QT_ARCH, x86_64) {
 
 }
 
-# Специфичные настройки для MacOS
-# Для MacOS
+
 macx {
     LIBS += "/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/lib/libconfigmanager.dylib"
     QMAKE_LFLAGS += -Wl,-rpath,$$PWD/../config_manager/build/lib
