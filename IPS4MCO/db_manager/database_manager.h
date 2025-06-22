@@ -18,8 +18,7 @@ public:
     explicit DatabaseManager(QObject *parent = nullptr);
     ~DatabaseManager();
 
-    bool connectToDatabase(const QString &host, const QString &database, 
-                          const QString &username, const QString &password);
+    bool connectToDatabase();
     bool isConnected() const;
     
     // Методы для работы с историей пополнений
