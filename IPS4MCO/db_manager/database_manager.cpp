@@ -1,5 +1,36 @@
 #include "database_manager.h"
 #include <QDebug>
+#include <QFile>
+#include <QSettings>
+#include <QTextStream>
+
+QMap<QString, QString> loadEnvFile(const QString &path)
+{
+    QMap<QString,QString> env;
+    QFile file(path);
+    if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        qWarning() << "Не удалось открыть .env файл !";
+        return env;
+    }
+
+    QTextStream in(&file);
+    while (!in.atEnd())
+    {
+        QString line = in.readLine().trimmed();
+        if (line.startsWith("#") || line.isEmpty()) continue;
+
+        QStringList parts = line.split("=", Qt::SkipEmptyParts);
+        if (parts.size() >= 2)
+        {
+            QString key = parts[0].trimmed();
+            QString value = parts[1].trimmed();
+            env[key] = value;
+        }
+    }
+    file.close();
+    return env;
+}
 
 DatabaseManager::DatabaseManager(QObject *parent)
     : QObject(parent)
@@ -16,14 +47,16 @@ DatabaseManager::~DatabaseManager()
     }
 }
 
-bool DatabaseManager::connectToDatabase(const QString &host, const QString &database,
-                                      const QString &username, const QString &password)
+bool DatabaseManager::connectToDatabase()
 {
+    auto env = loadEnvFile(".env");
+
     m_db = QSqlDatabase::addDatabase("QMYSQL");
-    m_db.setHostName(host);
-    m_db.setDatabaseName(database);
-    m_db.setUserName(username);
-    m_db.setPassword(password);
+    m_db.setHostName(env["DB_HOST"]);
+    m_db.setDatabaseName(env["DB_NAME"]);
+    m_db.setUserName(env["DB_USER"]);
+    m_db.setPassword(env["DB_PASSWORD"]);
+    m_db.setPort(env["DB_PORT"].toInt());
 
     if (!m_db.open()) {
         qDebug() << "Ошибка подключения к БД:" << m_db.lastError().text();
