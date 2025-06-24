@@ -3,14 +3,42 @@
 #include <QQmlContext>
 #include <QtQuickControls2/QQuickStyle>
 #include <QtQuick/QQuickView>
-
+#include <QFile>
+#include <QSettings>
+#include <QTextStream>
 #include "engine/engine.h"
 #include "accountmanager/accountmanager.h"
 #include "yookassa.h"
 #include "qrcodeprovider.h"
 
 #include "../qt-qrcode/quickitem/QtQrCodeQuickItem.hpp"
+QMap<QString, QString> loadEnvFile(const QString &path)
+{
+    QMap<QString,QString> env;
+    QFile file(path);
+    if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        qWarning() << "Не удалось открыть .env файл !";
+        return env;
+    }
 
+    QTextStream in(&file);
+    while (!in.atEnd())
+    {
+        QString line = in.readLine().trimmed();
+        if (line.startsWith("#") || line.isEmpty()) continue;
+
+        QStringList parts = line.split("=", Qt::SkipEmptyParts);
+        if (parts.size() >= 2)
+        {
+            QString key = parts[0].trimmed();
+            QString value = parts[1].trimmed();
+            env[key] = value;
+        }
+    }
+    file.close();
+    return env;
+}
 
 int main(int argc, char *argv[]) {
 

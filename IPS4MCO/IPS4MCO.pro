@@ -38,14 +38,16 @@ contains(QT_ARCH, i386) {
 }
 contains(QT_ARCH, x86_64) {
     # 64-битная версия
-    LIBS += -L"$$QTQRCODE_PATH/release/lib" -lqtqrcode
+    LIBS += -L"$$QTQRCODE_PATH/release/lib" -lqtqrcode -llibqrencode
     #INCLUDEPATH += $$PWD/../qt-qrcode/include
 
 }
 
-
+# Специфичные настройки для MacOS
+# Для MacOS
 macx {
     LIBS += "/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/lib/libconfigmanager.dylib"
+
     QMAKE_LFLAGS += -Wl,-rpath,$$PWD/../config_manager/build/lib
 }
 

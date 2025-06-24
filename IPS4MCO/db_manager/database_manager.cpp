@@ -3,14 +3,15 @@
 #include <QFile>
 #include <QSettings>
 #include <QTextStream>
-
+#include <QDir>
 QMap<QString, QString> loadEnvFile(const QString &path)
 {
-    QMap<QString,QString> env;
+    QMap<QString, QString> env;
     QFile file(path);
+
     if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
-        qWarning() << "Не удалось открыть .env файл !";
+        qWarning() << "Не удалось открыть .env файл!";
         return env;
     }
 
@@ -28,6 +29,7 @@ QMap<QString, QString> loadEnvFile(const QString &path)
             env[key] = value;
         }
     }
+
     file.close();
     return env;
 }
@@ -49,6 +51,7 @@ DatabaseManager::~DatabaseManager()
 
 bool DatabaseManager::connectToDatabase()
 {
+    QString envPath = QString("..%1..%1.env").arg(QDir::separator());
     auto env = loadEnvFile(".env");
 
     m_db = QSqlDatabase::addDatabase("QMYSQL");
