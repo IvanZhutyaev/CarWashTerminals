@@ -70,10 +70,12 @@ int main(int argc, char *argv[]) {
     QQmlApplicationEngine engine;
     engine.addImageProvider(QLatin1String("qr"), new QRCodeProvider());
 
+
+    auto env = loadEnvFile("../.env");
     // Создаем и настраиваем экземпляр YooKassa
     YooKassa yooKassa;
-    yooKassa.setShopId("1031378");
-    yooKassa.setSecretKey("test_x-b5O6tQsP2nz0zDoZ5YKCWo9XbPzUIvRH9vkAeCvoc");
+    yooKassa.setShopId(env["YOO_MONEY_SHOP_ID"]);
+    yooKassa.setSecretKey(env["YOO_MONEY_API_KEY"]);
 
     engine.rootContext()->setContextProperty("backend", &engine_backend);
     engine.rootContext()->setContextProperty("applicationDirPath", appdir);

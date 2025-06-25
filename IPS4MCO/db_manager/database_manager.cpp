@@ -51,8 +51,8 @@ DatabaseManager::~DatabaseManager()
 
 bool DatabaseManager::connectToDatabase()
 {
-    QString envPath = QString("..%1..%1.env").arg(QDir::separator());
-    auto env = loadEnvFile(".env");
+
+    auto env = loadEnvFile("../../.env");
 
     m_db = QSqlDatabase::addDatabase("QMYSQL");
     m_db.setHostName(env["DB_HOST"]);
