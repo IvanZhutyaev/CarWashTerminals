@@ -34,26 +34,32 @@ INCLUDEPATH += $$QTQRCODE_PATH \
 # Настройки для разных архитектур
 contains(QT_ARCH, i386) {
     # 32-битная версия
-    LIBS += -L"$$QTQRCODE_PATH/release-i386/lib" -lqtqrcode
+    LIBS += -L"$$QTQRCODE_PATH/release-i386/lib"
 }
 contains(QT_ARCH, x86_64) {
     # 64-битная версия
-    LIBS += -L"$$QTQRCODE_PATH/release/lib" -lqtqrcode -llibqrencode
+    LIBS += -L"$$QTQRCODE_PATH/release/lib"
     #INCLUDEPATH += $$PWD/../qt-qrcode/include
 
 }
-
+QMAKE_MACOSX_DEPLOYMENT_TARGET = 15.0
 # Специфичные настройки для MacOS
 # Для MacOS
 macx {
-    LIBS += "/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/lib/libconfigmanager.dylib"
-
-    QMAKE_LFLAGS += -Wl,-rpath,$$PWD/../config_manager/build/lib
+    # Явное указание пути к библиотеке
+    LIBS += "$$QTQRCODE_PATH/release/lib/libqtqrcode.dylib"
+    LIBS += -L/opt/homebrew/lib -lqrencode
+    INCLUDEPATH += $$QTQRCODE_PATH/lib /opt/homebrew/include
+    QMAKE_LFLAGS += -Wl,-rpath,$$QTQRCODE_PATH/release/lib
+    QMAKE_LFLAGS += -Wl,-rpath,/opt/homebrew/lib
 }
 
 # Для других ОС
 !macx {
+    LIBS += -L/usr/local/lib -lqrencode
     LIBS += "/Users/temamodder/Documents/Repositories/CarWashTerminals/config_manager/build/lib/libconfigmanager.so"
+    INCLUDEPATH += /usr/local/include
+    QMAKE_LFLAGS += -Wl,-rpath,/usr/local/lib
 }
 
 
@@ -79,7 +85,6 @@ RESOURCES += qml.qrc
 # Заголовочные файлы
 HEADERS += \
     accountmanager/accountmanager.h \
-    accountmanager/accountmanager.cpp \
     $$QTQRCODE_PATH/quickitem/QtQrCodeQuickItem.hpp \
     controller/modbuscontroller.h \
     engine/configmanager.h \
