@@ -1,64 +1,64 @@
 # CarWashTerminals
 
-**CarWashTerminals** — это программный комплекс для управления терминалами самообслуживания автомоек. Проект реализован с использованием C++ (Qt/QML) и поддерживает работу с базами данных PostgreSQL и SQLite, а также интеграцию с YooKassa и генерацию QR-кодов.
+**CarWashTerminals** is a software suite for managing self-service car wash terminals. The project is implemented using C++ (Qt/QML) and supports PostgreSQL and SQLite databases, as well as integration with YooKassa and QR code generation.
 
-## Основные возможности
+## Main Features
 
-- Регистрация и авторизация пользователей по номеру телефона
-- Управление балансом пользователя и пополнение через терминал
-- Синхронизация данных между локальной и центральной БД
-- История пополнений и операций
-- Интеграция с YooKassa для онлайн-платежей
-- Генерация QR-кодов для оплаты
-- Современный интерфейс на QML с поддержкой Material Design
-- Работа с двумя типами БД: PostgreSQL (центральная) и SQLite (локальная)
-- Адаптация под сенсорные терминалы (фуллскрин, крупные элементы)
+- User registration and authorization by phone number
+- User balance management and top-up via terminal
+- Data synchronization between local and central DB
+- Top-up and transaction history
+- Integration with YooKassa for online payments
+- QR code generation for payment
+- Modern QML interface with Material Design support
+- Work with two DB types: PostgreSQL (central) and SQLite (local)
+- Adaptation for touch terminals (fullscreen, large elements)
 
-## Структура проекта
+## Project Structure
 
-- `IPS4MCO/` — основной исходный код приложения (C++/QML)
-  - `accountmanager/` — управление пользователями, регистрация, авторизация, история пополнений
-  - `db_manager/`, `engine/`, `controller/`, `pilotnt/` — вспомогательные модули
-  - `qml/` — QML-компоненты интерфейса (экраны, кнопки, формы)
-  - `images/`, `fonts/` — ресурсы для интерфейса
-- `config_manager/` — модуль для работы с конфигурациями и типами данных
-- `qt-qrcode/` — библиотека для генерации QR-кодов (C++/QML)
-- `audio/` — звуковые файлы для терминала
-- `config/` — конфигурационные файлы (цвета, UI, modbus)
-- `build-*/` — каталоги сборки (автоматически создаются при компиляции)
+- `IPS4MCO/` — main application source code (C++/QML)
+  - `accountmanager/` — user management, registration, authorization, top-up history
+  - `db_manager/`, `engine/`, `controller/`, `pilotnt/` — auxiliary modules
+  - `qml/` — QML UI components (screens, buttons, forms)
+  - `images/`, `fonts/` — UI resources
+- `config_manager/` — module for working with configurations and data types
+- `qt-qrcode/` — library for QR code generation (C++/QML)
+- `audio/` — sound files for the terminal
+- `config/` — configuration files (colors, UI, modbus)
+- `build-*/` — build directories (created automatically during compilation)
 
-## Быстрый старт
+## Quick Start
 
-1. **Требования:**
+1. **Requirements:**
    - Qt 6.9+ (Qt Quick, Qt SQL, Qt Network)
-   - CMake или qmake
-   - PostgreSQL сервер (для центральной БД)
-   - Компилятор C++17+
+   - CMake or qmake
+   - PostgreSQL server (for central DB)
+   - C++17+ compiler
 
-2. **Сборка:**
-   - Откройте проект `IPS4MCO.pro` в Qt Creator или используйте qmake:
+2. **Build:**
+   - Open `IPS4MCO.pro` in Qt Creator or use qmake:
      ```
      qmake IPS4MCO.pro
      make
      ```
-   - Для сборки QR-библиотеки используйте проект в `qt-qrcode/`.
+   - To build the QR library, use the project in `qt-qrcode/`.
 
-3. **Запуск:**
-   - Запустите собранный бинарник.
-   - Для работы с центральной БД укажите параметры подключения в `accountmanager.cpp` (host, user, password, dbname).
-   - Для тестирования можно использовать только SQLite (локально).
+3. **Run:**
+   - Run the built binary.
+   - To work with the central DB, specify connection parameters in `accountmanager.cpp` (host, user, password, dbname).
+   - For testing, you can use only SQLite (locally).
 
-4. **Настройка:**
-   - Измените конфиги в папке `config/` под свои нужды.
-   - Для интеграции с YooKassa укажите свои ShopId и SecretKey в `main.cpp`.
+4. **Configuration:**
+   - Modify the configs in `config/` as needed.
+   - For YooKassa integration, specify your ShopId and SecretKey in `main.cpp`.
 
-## Основные файлы
+## Main Files
 
-- `IPS4MCO/main.cpp` — точка входа, инициализация движка, QML, провайдеров
-- `IPS4MCO/main.qml` — главное QML-окно, навигация по экранам
-- `IPS4MCO/accountmanager/accountmanager.cpp` — логика пользователей и баланса
-- `qt-qrcode/` — генерация QR-кодов для оплаты
+- `IPS4MCO/main.cpp` — entry point, initialization of engine, QML, providers
+- `IPS4MCO/main.qml` — main QML window, screen navigation
+- `IPS4MCO/accountmanager/accountmanager.cpp` — user and balance logic
+- `qt-qrcode/` — QR code generation for payment
 
-## Лицензия
+## License
 
-Проект распространяется под лицензией MIT. Подробнее см. файл `LICENSE`.
+The project is distributed under the MIT license. See the `LICENSE` file for details.
